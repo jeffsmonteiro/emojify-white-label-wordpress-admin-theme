@@ -1,0 +1,12 @@
+.widgets-php{
+  .widgets-chooser{
+    .widgets-chooser-selected{
+      .widgets-chooser-button{
+        background-color: $primary;
+      }
+      &:before{
+        color: white;
+      }
+    }
+  }
+}

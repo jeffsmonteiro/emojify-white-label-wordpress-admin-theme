@@ -1,0 +1,504 @@
+// Interface
+
+$darkmode-background: $petro;
+$darkmode-border-input: rgba(255,255,255,0.2);
+$darkmode-border-input-hover: rgba(255,255,255,0.3);
+$darkmode-border: rgba(255,255,255,0.1);
+$dakrmode-component-preview: white;
+$darkmode-area-hover: rgba(255,255,255,0.1);
+$darkmode-selected: white;
+$darkmode-selected-text: $gray-dark;
+$darkmode-text: white;
+$darkmode-info: rgba(255,255,255,0.5);
+$darkmode-info-hover: rgba(255,255,255,0.8);
+
+.editor-styles-wrapper{
+  background: #fff;
+}
+
+.block-editor-block-types-list__item:not(:disabled):active, .block-editor-block-types-list__item:not(:disabled):focus{
+  box-shadow: 0 0 0 1px $darkmode-border-input, 0 0 0 1px $darkmode-border-input;
+  outline: 2px solid transparent;
+}
+
+.editor-post-title__block:not(.is-focus-mode).is-selected .editor-post-title__input{
+  box-shadow: -3px 0 0 0 #555d66 !important;
+}
+
+#editor{
+  
+  .edit-post-layout{
+    .edit-post-header{
+      top: 60px;
+    }
+    .edit-post-sidebar{
+      margin-top: 28px;
+    }
+    .edit-post-layout__content{
+      margin-top: 28px;
+    }
+  }
+  .editor-post-publish-panel{
+    margin-top: 28px;
+  }
+
+  .components-button{
+    &.is-button.is-primary{
+      color: white;
+      border-color: $primary-hover;
+      background: $primary;
+      @include transition( all .2s ease );
+      &:hover{
+        color: white;
+        background: $primary-hover;
+        border-color: $primary-hover;
+      }
+      &:active{
+        color: white;
+        background: darken($primary-hover, 8%);
+        border-color: $primary-hover;
+      }
+      &:focus{
+        color: white;
+        background: darken($primary-hover, 8%);
+        border-color: $primary-hover;
+        box-shadow: 0 0 0 1px $primary-hover;
+        outline: 2px solid transparent;
+        outline-offset: 0;
+      }
+      &[aria-disabled="true"]{
+        background: rgba($primary, 0.4);
+        border-color: rgba($primary, 0.4);
+      }
+    }
+    &.is-button.is-default{
+      color: $primary;
+      border-color: $primary;
+      background: white;
+      @include transition( all .2s ease );
+      &:hover{
+        color: white;
+        background: $primary-hover;
+        border-color: $primary-hover;
+      }
+      &:active, &.active{
+        color: white;
+        background: darken($primary-hover, 8%);
+        border-color: $primary-hover;
+        &:hover{
+          background: lighten($primary-hover, 8%);
+          border-color: $primary-hover;
+          color: white;
+        }
+      }
+      &:focus{
+        color: white;
+        background: darken($primary-hover, 8%);
+        border-color: $primary-hover;
+        box-shadow: 0 0 0 1px $primary-hover;
+        outline: 2px solid transparent;
+        outline-offset: 0;
+      }
+    }
+    &.is-tertiary{
+      color: $primary;
+      border-color: white;
+      background: white;
+      border-radius: 3px;
+      @include transition( all .2s ease );
+      &:hover{
+        color: $primary;
+        background: rgba($primary-hover, 0.1);
+        border-color: rgba($primary-hover, 0.1);
+      }
+      &:active, &.active{
+        color: $primary;
+        background: rgba($primary-hover, 0.1);
+        border-color: rgba($primary-hover, 0.1);
+        &:hover{
+          color: $primary;
+          background: rgba($primary-hover, 0.2);
+          border-color: rgba($primary-hover, 0.2);
+        }
+      }
+      &:focus{
+        color: $primary;
+        background: rgba($primary-hover, 0.1);
+        border-color: rgba($primary-hover, 0.1);
+        box-shadow: 0 0 0 1px $primary-hover;
+        outline: 2px solid transparent;
+        outline-offset: 0;
+      }
+    }
+  }
+
+  .components-popover{
+    
+    .components-popover__content{
+      border-radius: 8px;
+      background: $darkmode-background;
+
+      p {
+        color: $darkmode-text;
+      }
+      p > a.is-link {
+        color: $primary;
+      }
+
+      .components-icon-button{
+        &:focus, &:hover, &:active{
+          background-color: $darkmode-area-hover;
+          border-color: $darkmode-border-input;
+          outline: none;
+          box-shadow: none;
+          svg{
+            fill: white;
+          }
+        }
+      }
+      // TABLE OF CONTENTS
+
+      .table-of-contents__wrapper{
+        .table-of-contents__counts{
+          .table-of-contents__count{
+            color: $darkmode-text;
+            & > span {
+              color: $darkmode-text;
+            }
+          }
+          
+        }
+      }
+
+      // INSETER BLOCKS
+      .components-tip{
+        color: $darkmode-info;
+      }
+
+      .components-panel__body{
+        border-top: 1px solid $darkmode-border;
+        border-bottom: 1px solid $darkmode-border;
+      }
+
+      .components-panel__body{
+        .components-panel__body-title{
+          button{
+            color: $darkmode-text;
+            .components-panel__arrow{
+              color: $darkmode-info;
+            }
+            &:focus, &:hover, &:active{
+              background-color: $darkmode-area-hover;
+              outline: none;
+            }
+          }
+          &:focus, &:hover, &:active{
+            background-color: transparent;
+            outline: none;
+          }
+        }
+        
+        .block-editor-block-types-list{
+          .block-editor-block-types-list__list-item{
+            .block-editor-block-types-list__item{
+              .block-editor-block-types-list__item-title{
+                color: $darkmode-text;
+              }
+              &:not(:disabled):hover:before{
+                background-color: $darkmode-area-hover;
+              }
+              &:not(:disabled):focus:before{
+                background-color: $darkmode-area-hover;
+                box-shadow: none;
+              }
+            } 
+          }
+        }
+      }
+      
+      
+      .block-editor-inserter__menu{
+
+        // selector
+        .block-editor-inserter__main-area{
+
+          input[type=search].block-editor-inserter__search{
+            border: 1 px solid $darkmode-border-input;
+            background-color: $darkmode-background;
+            color: $darkmode-text;
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+              color: $darkmode-info;
+              opacity: 1; /* Firefox */
+            }
+            
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+              color: $darkmode-info;
+            }
+            
+            &::-ms-input-placeholder { /* Microsoft Edge */
+              color: $darkmode-info;
+            }
+            &:focus{
+              border-color: $darkmode-border-input-hover;
+              box-shadow: none;
+            }
+          }
+          .editor-inserter__no-results,
+          .block-editor-inserter__no-results{
+            color: $darkmode-text;
+          }
+          
+        }
+
+        // helper
+        .block-editor-inserter__menu-help-panel{
+          border-left: 1px solid $darkmode-border;
+          color: $darkmode-text;
+          .block-editor-block-card{
+            border-bottom: 1px solid $darkmode-border;
+          }
+          .block-editor-inserter__preview{
+            .block-editor-inserter__preview-content{
+              border: 1px solid $darkmode-border;
+              background-color: $dakrmode-component-preview;
+            }
+            .block-editor-inserter__preview-content-missing{
+              border: 1px solid $darkmode-border;
+              color: $darkmode-text;
+            }
+          }
+        }
+      }
+
+      
+      
+      .components-toggle-control__label{
+        color: $darkmode-info;
+        &:hover{
+          color: $darkmode-info-hover;
+        }
+      }
+      .block-editor-block-navigation__label{
+        color: $darkmode-text;
+      }
+      .block-editor-block-navigation__item-button, 
+      .block-editor-block-icon{
+        color: $darkmode-text;
+        svg{
+          color: $darkmode-info;
+        }
+        &:hover, &:focus, &:active, &.is-selected {
+          background-color: $darkmode-area-hover;
+        }
+      }
+
+      
+
+      // LINK EDITOR
+      .block-editor-url-popover__settings-toggle{
+        border-left: 1px solid $darkmode-border;
+      }
+      .block-editor-url-input__suggestions{
+        button{
+          background-color: $darkmode-background;
+          color: $darkmode-text;
+          &:hover{
+            background-color: $darkmode-area-hover;
+          }
+        }
+      }
+
+      .block-editor-url-popover__input-container{
+        .components-button, .components-icon-button{
+          &:not(:disabled){
+            &:not([aria-disabled=true]){
+              &:not(.is-default){
+                color: $darkmode-info;
+                &:hover, &:active, &:focus{
+                  background-color: $darkmode-background;
+                  & > svg{
+                    box-shadow: inset 0 0 0 1px $darkmode-border-input, inset 0 0 0 1px $darkmode-border-input;
+                    background: $darkmode-area-hover;
+                    color: $darkmode-info-hover;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .editor-url-popover__row{
+          .editor-url-input{
+            input{
+              background-color: $darkmode-background;
+              color: $darkmode-text;
+              &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: $darkmode-info;
+                opacity: 1; /* Firefox */
+              }
+              
+              &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: $darkmode-info;
+              }
+              
+              &::-ms-input-placeholder { /* Microsoft Edge */
+                color: $darkmode-info;
+              }
+            }
+          }
+        }
+        .block-editor-url-popover__settings {
+          border: 1px solid $darkmode-border;
+        }
+      }
+        
+      // DROPDOWN MENU
+
+      .components-dropdown-menu__menu{
+        .components-dropdown-menu__menu-item{
+          color: $darkmode-text;
+          &:hover, &:active{
+            background-color: $darkmode-area-hover;
+            color: $darkmode-text;
+          }
+          &:focus{
+            background-color: $darkmode-background;
+          }
+        }
+      }
+      
+      fieldset{
+        legend{
+          color: $darkmode-text;
+        }
+        div{
+          label{
+            color: $darkmode-text;
+          }
+          p{
+            color: $darkmode-info;
+          }
+        }
+      }
+      .components-datetime{
+        .components-datetime__calendar-help{
+          color: $darkmode-text;
+        }
+        .components-datetime__time{
+          select,
+          input{
+            background-color: $darkmode-background;
+            color: $darkmode-text;
+            border-color: $darkmode-border-input;
+            &:hover{
+              background-color: $darkmode-area-hover;
+            }
+          }
+        }
+        .components-datetime__date{
+          border-top: 1px solid $darkmode-border;
+          .DayPicker, .DayPicker__horizontal, .CalendarMonthGrid, .CalendarMonth{
+            background-color: $darkmode-background;
+          }
+          .DayPickerNavigation_button{
+            background-color: $darkmode-background;
+            color: $darkmode-text;
+            border-color: $darkmode-border;
+            &:hover{
+              background-color: $darkmode-area-hover;
+              border-color: $darkmode-border-input-hover;
+              .DayPickerNavigation_svg__horizontal {
+                fill: $darkmode-info-hover;
+              }
+            }
+          }
+          .CalendarMonth{
+            .CalendarMonth_caption{
+              color: $darkmode-text;
+            }
+          }
+          .CalendarDay{
+            background-color: $darkmode-background;
+            color: $darkmode-text;
+            //border-color: rgba(255,255,255,0.3);
+            &.CalendarDay__selected{
+              background-color: $darkmode-selected;
+              color: $darkmode-selected-text;
+            }
+            &:hover{
+              background-color: $darkmode-area-hover;
+            }
+            
+          }
+          
+        }
+      }
+      .components-menu-group{
+        .components-menu-group__label{
+          color: $darkmode-text;
+        }
+        .components-button{
+          color: $darkmode-text;
+          &:hover, &:focus, &:active{
+            color: $darkmode-text;
+            background: $darkmode-area-hover;
+          }
+          .components-menu-item__info-wrapper{
+            .components-menu-item__info{
+              color: $darkmode-info;
+            }
+          }
+          svg{
+            color: $darkmode-info;  
+          }
+        }
+      }
+      .components-dropdown-menu__menu .components-menu-group:not(:last-child){
+        border-bottom: 1px solid $darkmode-border;
+      }
+    }
+  }
+}
+
+// @media (min-width: 782px) and (min-width: 960px){
+//   body.auto-fold, .edit-post-layout__content {
+//     margin-left: 200px !important;
+//   }
+// }
+
+.edit-post-header, body.auto-fold .edit-post-header{
+  left: 201px;
+  @include breakpoint( large ){
+    left: 61px;
+  }
+  @include breakpoint( medium ){
+    left: 0;
+  }
+}
+.edit-post-layout__content, body.auto-fold .edit-post-layout__content{
+  margin-left: 201px;
+  @include breakpoint( large ){
+    margin-left: 61px;
+  }
+  @include breakpoint( medium ){
+    margin-left: 0;
+  }
+}
+.folded, body.auto-fold.folded{
+  .edit-post-header{
+    left: 61px;
+    @include breakpoint( medium ){
+      left: 0;
+    }
+  }
+  .edit-post-layout__content{
+    margin-left: 61px;
+    @include breakpoint( medium ){
+      margin-left: 0;
+    }
+  } 
+}
+
+
+.components-popover:not(.is-without-arrow):not(.is-mobile):after{
+  border: 8px solid $petro;
+}

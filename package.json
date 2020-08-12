@@ -1,0 +1,47 @@
+{
+  "name": "ewlwat",
+  "version": "0.0.1",
+  "description": "Emojify White Label WordPress Admin Theme Admin Theme",
+  "main": "index.js",
+  "engines": {
+    "npm": ">=2.1.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffsmonteiro/ewlwat"
+  },
+  "keywords": [
+    "wordpress",
+    "admin-theme"
+  ],
+  "author": "Jeff Monteiro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeffsmonteiro/ewlwat/issues"
+  },
+  "homepage": "https://jeffmonteiro.gitbook.io/ewlwat/",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "del": "^3.0.0",
+    "gulp-autoprefixer": "6.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-ignore": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "1.0.0",
+    "gulp-rimraf": "^0.2.2",
+    "gulp-sass": "4.0.2",
+    "gulp-sequence": "1.0.0",
+    "gulp-sourcemaps": "2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "5.0.1",
+    "natives": "^1.1.6",
+    "run-sequence": "^2.2.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8"
+  }
+}

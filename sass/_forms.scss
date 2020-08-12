@@ -1,0 +1,207 @@
+.button,
+.wp-core-ui .button {
+	color: white;
+	border-color: $primary-hover;
+	background: $primary;
+	@include transition( all .2s ease );
+	&:hover{
+		color: white;
+		background: $primary-hover;
+		border-color: $primary-hover;
+	}
+	&:active{
+		color: white;
+		background: darken($primary-hover, 8%);
+		border-color: $primary-hover;
+	}
+	&:focus{
+		color: white;
+		background: darken($primary-hover, 8%);
+		border-color: $primary-hover;
+    box-shadow: 0 0 0 1px $primary-hover;
+    outline: 2px solid transparent;
+    outline-offset: 0;
+	}
+}
+
+
+.wp-core-ui .button-secondary{
+	color: $primary;
+	border-color: $primary;
+	background: white;
+	@include transition( all .2s ease );
+	&:hover{
+		color: white;
+		background: $primary-hover;
+		border-color: $primary-hover;
+	}
+	&:active, &.active{
+		color: white;
+		background: darken($primary-hover, 8%);
+		border-color: $primary-hover;
+		&:hover{
+			background: lighten($primary-hover, 8%);
+			border-color: $primary-hover;
+			color: white;
+		}
+	}
+	&:focus{
+		color: white;
+		background: darken($primary-hover, 8%);
+		border-color: $primary-hover;
+    box-shadow: 0 0 0 1px $primary-hover;
+    outline: 2px solid transparent;
+    outline-offset: 0;
+	}
+}
+
+
+
+.button.action,
+.button.activate,
+input[name="filter_action"].button,
+input[name="changeit"].button,
+#search-submit{
+	color: $primary;
+	border-color: $primary;
+	background: white;
+	//margin: 4px;
+	&:hover{
+		color: white;
+		background: $primary-hover;
+		border-color: $primary-hover;
+	}
+}
+
+.boospot-image-remove.button.remove{
+	color: $notification-color;
+	border-color: $notification-color;
+	background: white;
+	font-size: 1.8em;
+	line-height: 1em;
+  padding: 0 7px;
+	//margin: 4px;
+	&:hover{
+		color: white;
+		background: $notification-color;
+		border-color: $notification-color;
+	}
+	&:active, &.active{
+		color: white;
+		background: $notification-color;
+		border-color: $notification-color;
+		&:hover{
+			color: white;
+			background: $notification-color;
+			border-color: $notification-color;
+		}
+	}
+	&:focus{
+		color: white;
+		background: darken($notification-color, 8%);
+		border-color: $notification-color;
+    box-shadow: 0 0 0 1px $notification-color;
+    outline: 2px solid transparent;
+    outline-offset: 0;
+	}
+}
+
+.wp-core-ui .button-link{
+	color: $primary;
+	&:hover{
+		color: $primary-hover;
+		font-weight: bold;
+	}
+}
+
+.wp-list-table a{
+	&:hover{
+		color: $primary-hover;
+		font-weight: bold;
+	}
+}
+
+a.delete, 
+a.delete-permanently, 
+.menu-delete, 
+span.delete a, 
+.row-actions span.spam a, 
+.row-actions span.trash a, 
+.submitbox .submitdelete{
+	color: $notification-color;
+	&:hover{
+		font-weight: bold;
+	}
+}
+
+
+
+input[type="text"],
+input[type="password"],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea {
+	box-shadow: 0 0 0 transparent;
+	border-radius: 4px;
+	border: 1px solid rgba($gray, 0.3);
+	background-color: #fff;
+	color: $gray;
+	@include transition( all .2s ease );
+	&:hover{
+		border: 1px solid rgba($gray, 0.7);
+	}
+	&:focus{
+		border: 1px solid rgba($gray, 0.7);
+		box-shadow: none !important;
+		/* Only visible in Windows High Contrast mode */
+		//outline: 2px solid transparent;
+		outline: none;
+	}
+	&:disabled, &.disabled{
+		background: rgba(255, 255, 255, 0.5);
+		border-color: rgba(222, 222, 222, 0.75);
+		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+		color: rgba(51, 51, 51, 0.5);
+	}
+}
+
+input[type="radio"]:checked + label:before {
+	color: $gray;
+}
+
+input[type="radio"]:checked::before {
+	content: "";
+	background-color: $primary;
+}
+
+.wp-core-ui input[type="reset"]:hover,
+.wp-core-ui input[type="reset"]:active {
+	color: $primary;
+}
+
+
+.wp-core-ui select {
+	font-size: 1em;
+	color: $gray;
+	border-color: rgba($gray, 0.3);
+	&:hover{
+		border-color: rgba($gray, 0.7);
+	}
+	&:focus{
+		border-color: rgba($gray, 0.7);
+		color: $gray;
+	}
+	&:active{
+		border-color: rgba($gray, 0.9);
+	}
+}

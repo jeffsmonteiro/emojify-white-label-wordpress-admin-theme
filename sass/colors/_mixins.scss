@@ -1,0 +1,98 @@
+/*
+ * Button mixin- creates 3d-ish button effect with correct
+ * highlights/shadows, based on a base color.
+ */
+@mixin button( $button-color, $text-color: #fff ) {
+	background: $button-color;
+	border-color: $button-color;
+	color: $text-color;
+	box-shadow: none;
+	border-radius: 3px;
+	//margin: 4px;
+	&:hover,
+	&:focus {
+		background: lighten( $button-color, 3% );
+		border-color: lighten( $button-color, 3% );
+		color: $text-color;
+		box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+	}
+
+	&:focus {
+		box-shadow: inset 0 1px 0 $button-color, 0 0 2px 1px lighten( $button-color, 10% );
+	}
+
+	&:active,
+	&.active,
+	&.active:focus,
+	&.active:hover {
+		background: darken( $button-color, 10% );
+		border-color: darken( $button-color, 10% );
+	 	box-shadow: inset 0 2px 0 darken( $button-color, 15% );
+	}
+
+	&[disabled],
+	&:disabled,
+	&.button-primary-disabled,
+	&.disabled {
+		color: hsl( hue( $button-color ), 10%, 80% ) !important;
+		background: darken( $button-color, 8% ) !important;
+		border-color: darken( $button-color, 15% ) !important;
+		text-shadow: none !important;
+	}
+
+	&.button-hero {
+		box-shadow: 0 2px 0 darken( $button-color, 15% ) !important;
+		&:active {
+		 	box-shadow: inset 0 3px 0 darken( $button-color, 15% ) !important;
+		}
+	}
+
+}
+
+// @include transition(color .3s ease);
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// @include breakpoint( 1024px )
+
+// body {
+// 	background: pink;
+// 	@include breakpoint(large) { background: red; }
+// 	@include breakpoint(medium) { background: cyan; }
+// 	@include breakpoint(small) { background: green; }
+// 	@include breakpoint(“max-width: 480px”) { background: yellow; }
+// }
+
+@mixin breakpoint($break) {
+	@if $break == 'large' {
+		@media only screen and (max-width: 960px) { @content; }
+	}
+	@else if $break == 'minlarge' {
+		@media only screen and (min-width: 960px) { @content; }
+	}
+	@else if $break == 'medium' {
+		@media only screen and (max-width: 782px) { @content; }
+	}
+	@else if $break == 'minmedium' {
+		@media only screen and (min-width: 782px) { @content; }
+	}
+	@else if $break == 'small' {
+		@media only screen and (max-width: 600px) { @content; }
+	} 
+	@else {
+		@media ($break) { @content; }
+	}
+}
+
+// @include opacity(0.8);
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	filter: alpha(opacity=$opacity*100);
+}

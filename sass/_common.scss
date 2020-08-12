@@ -1,0 +1,290 @@
+html{
+  min-height: 100%;
+  &.wp-toolbar{
+    padding-top: 60px;
+    @include breakpoint( small ){
+      padding-top: 0;
+    }
+  }
+  #wpbody{
+    @include breakpoint( small ){
+      padding-top: 60px;
+    }
+  }
+  body #wpwrap #wpcontent #wpbody #wpbody-content{
+    position: relative;
+    min-height: 100%;
+    .wrap{
+      min-height: 100vh;
+      position: relative;
+      padding: 40px;
+      @include breakpoint(medium){
+        padding: 0 20px 20px;
+      }
+      @include breakpoint(small){
+        padding: 0 10px 10px;
+      }
+    }
+    .woocommerce_options_panel{
+      .wrap{
+        min-height: inherit;
+        position: relative;
+        padding: 0;
+      } 
+    }
+  }
+  .folded #wpcontent,
+  .folded #wpfooter {
+    margin-left: 61px;
+    padding: 0;
+    @include breakpoint( medium ){
+      margin-left: 0;
+    }
+  }
+  
+  #wpcontent {
+    margin-left: 201px;
+    padding: 0;
+    @include breakpoint( large ){
+      margin-left: 61px !important;
+      padding: 0;
+    }
+    @include breakpoint( medium ){
+      margin-left: 0px !important;
+      padding-left: 0px !important;
+      padding: 0;
+    }
+  }
+  .folded #wpfooter,
+  #wpfooter {
+    margin-left: 201px;
+    padding: 20;
+    @include breakpoint( large ){
+      margin-left: 61px !important;
+      padding: 20;
+    }
+    @include breakpoint( medium ){
+      margin-left: 0px !important;
+      padding-left: 0px !important;
+      padding: 0;
+    }
+  }
+}
+
+#wpbody-content {
+	float: left;
+	width: 100%;
+  #screen-meta{
+    z-index: 10;
+    top: 0px;
+    margin: 0 40px -1px 40px;
+    @include breakpoint( medium ){
+      margin: 0 10px -1px 10px;
+    }
+  }
+  #screen-meta-links{
+    @include breakpoint( medium ){
+      margin-bottom: 0;
+    }
+    > div {
+      z-index: 2;
+      top: 0;
+      right: 20px;
+      @include opacity(0.4);
+      @include transition( opacity .2s ease );
+      
+      &:hover{
+        @include opacity(1);
+      }
+    }
+  }
+  .wrap{
+    position: relative;
+    background-color: #fff;
+    margin: 0;
+    > .notice{
+      // position: fixed;
+      // bottom: 20px;
+      // right: 20px;
+      // width: 300px;
+      // webkit-box-shadow: 0 0px 10px 0 rgba(0,0,0,.2)!important;
+      // box-shadow: 0 0px 10px 0 rgba(0,0,0,.2)!important;
+      // z-index: 9999999;
+    }
+    .wp-heading-inline, h1{
+      color: $gray;
+      font-weight: 600;
+      font-size: 2.5em;
+    }
+    .wp-heading-inline{
+      .title-count{
+        margin-right: 5px;
+        top: -6px;
+        padding: 6px 10px;
+      }
+    }
+
+    .page-title-action{
+      background-color: white;
+      border: 1px solid $yellow;
+      border-radius: 16px;
+      padding: 6px 12px;
+      color: $yellow;
+      //height: 24px;
+      position: relative;
+      top: -6px;
+      &:hover{
+        background-color: $yellow;
+        color: white;
+      }
+      &:focus, &:active{
+        border-color: $yellow;
+        box-shadow: 0 0 0 1px $yellow-light;
+        outline: 2px solid transparent;
+      }
+    }
+    // applied only for new posts
+    // some plugins can put buttons on head
+
+    a[href*="-new.php"],
+    a[href$="-install.php"]{
+      background-color: $yellow-light;
+      border-radius: 16px;
+      border: 1px solid $yellow-light;
+      padding: 12px 12px;
+      font-size: 0px;
+      color: transparent;
+      height: 24px;
+      width: 2px;
+      position: relative;
+      top: -11px;
+      &:hover{
+        background-color: $yellow;
+      }
+      &:after{
+        content: '';
+        width: 2px;
+        height: 16px;
+        background-color: #fff;
+        position: absolute;
+        top: 4px;
+        left: 11px;
+      }
+      &:before{
+        content: '';
+        width: 16px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: 10.5px;
+        left: 4px;
+      }
+    }
+    .screen-reader-text{
+      display: none;
+    }
+    ul.subsubsub{
+      width: 100%;
+      padding: 0 0 4px 0;
+      margin: 0;
+      }
+    }
+    > form#posts-filter{
+      + form {
+        display: none;
+      }
+    }
+    > #posts-filter{
+      .search-box{
+        width: 100%;  
+        padding: 20px 0;
+      }  
+    }
+    form.search-plugins{
+      padding:  0;
+    }
+  .search-box{
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0;
+    display: flex;
+    float: inherit;
+    #post-search-input, 
+    #plugin-search-input{
+      width: 100%;
+    }
+  }
+  @include breakpoint(medium){
+    .search-box{
+      width: calc(100% - 20px);
+      margin-bottom: 0;
+      padding: 5px 10px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      max-height: 40px;
+      z-index: 9990;
+      -webkit-box-shadow: 0 -1px 6px 0 rgba(32, 33, 36, 0.28);
+       box-shadow: 0 -1px 6px 0 rgba(32, 33, 36, 0.28);
+       // replace text button by css icon
+       &:before{
+        content: '';
+        width: 20px;
+        height: 20px;
+        border: 3px solid white;
+        border-radius: 20px;
+        position: absolute;
+        right: 17px;
+        top: 11px;
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        right: 13px;
+        bottom: 11px;
+        width: 5px;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        border: 2px solid white;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+      #search-submit{
+        color: white;
+        border-color: $primary-hover;
+        background: $primary;
+        // remove text from buttom
+        text-indent: -999px;
+        min-width: 40px;
+        @include transition( all .2s ease );
+        &:hover{
+          color: white;
+          background: $primary-hover;
+          border-color: $primary-hover;
+        }
+        &:active{
+          color: white;
+          background: darken($primary-hover, 8%);
+          border-color: $primary-hover;
+        }
+        &:focus{
+          color: white;
+          background: darken($primary-hover, 8%);
+          border-color: $primary-hover;
+          box-shadow: 0 0 0 1px $primary-hover;
+          outline: 2px solid transparent;
+          outline-offset: 0;
+        }
+       }
+    }
+  }
+}
+
+
+
+#ure_page_permissions_link{
+  margin-left: 200px !important;
+}
+#ure_list_page_permissions{
+  margin-left: 200px !important;
+}

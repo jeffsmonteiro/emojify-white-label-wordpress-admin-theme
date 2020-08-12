@@ -1,0 +1,36 @@
+.themes-php{
+  .add-new-theme{
+    display: none;
+  }
+}
+.theme-browser, .broken-themes{
+  margin-top: 30px;
+}
+
+.broken-themes{
+  margin-top: 40px;
+  border-radius: 20px;
+  h3{
+    border-bottom: $border;
+    padding-bottom: 18px;
+  }
+  table{
+    width: 100%;
+    tbody{
+      th{
+        border-bottom: 1px solid $gray-dark;
+        padding: 0 0 6px;
+        ~ td{
+          border-bottom: 1px solid $gray-dark;
+          padding: 0 0 6px;
+        }
+      }
+      td{
+        padding: 0 0 6px;
+        &:last-child{
+          text-align: right;
+        }
+      }
+    }
+  }
+}

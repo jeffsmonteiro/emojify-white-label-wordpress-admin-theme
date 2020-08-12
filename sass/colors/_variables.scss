@@ -1,0 +1,111 @@
+// assign default value to all undefined variables
+
+// core variables
+
+$navbar: 60px;
+
+$blue : #00a2ff;
+$primary-hover: $blue;
+$primary: rgba($blue, 0.8);
+
+$gray-light: #f3f4f5;
+$gray: #555d66;
+$gray-dark: #191e23;
+
+$petro: #252b33;
+
+$yellow: #ffb71c;
+$yellow-light: lighten($yellow, 8%);
+$yellow-dark: darken($yellow, 15%);
+
+$overlay: $gray-light;
+
+$border-color: #eaeaea;
+$border: 1px solid $border-color;
+
+
+$text-color-hover: $gray-dark;
+$text-color: $gray !default;
+$text-color-highlight: #fff;
+$base-color: #fff !default;
+
+$icon-color: hsl( hue( $base-color ), 7%, 95% ) !default;
+$highlight-color: $yellow !default;
+$notification-color: #ff5252 !default;
+
+$btn-normal: $primary;
+$btn-hover: $primary-hover;
+$btn-pressed: darken($btn-normal, 8%);
+
+// global
+
+$body-background: #fff !default;
+
+$link: $primary !default;
+$link-focus: $primary !default;
+
+$button-color: $btn-normal !default;
+$form-checked: $highlight-color !default;
+
+
+// admin menu
+
+$menu-dark-selected: #555d66;
+$submenu-text: white;
+$submenu-head: rgba($submenu-text, 0.6);
+$submenu-background-item-hover: rgba(255,255,255,0.1);
+$submenu-dark: $petro;
+$svg-color: rgba($submenu-dark, 0.7);
+$svg-color-hover: rgba($submenu-dark, 1);;
+
+$menu-width: 184px;
+$submenu-left: $menu-width + 16px;
+$submenu-min-width: 200px;
+$folded-menu-width: 44px;
+$folded-submenu-left: $folded-menu-width + 16px;
+
+// emojify
+$menu-item-selected: $gray-light;
+$menu-item-hover: $gray-light;
+$menu-background: #fff;
+
+
+// admin menu & admin-bar
+
+$menu-text: $text-color !default;
+$menu-icon: $icon-color !default;
+$menu-background: $base-color !default;
+
+$menu-highlight-text: $text-color !default;
+$menu-highlight-icon: $text-color !default;
+$menu-highlight-background: $submenu-background-item-hover  !default;
+
+$menu-current-text: $menu-highlight-text !default;
+$menu-current-icon: $menu-highlight-icon !default;
+$menu-current-background: $menu-highlight-background !default;
+
+$menu-submenu-text: mix( $base-color, $text-color, 30% ) !default;
+$menu-submenu-background: #fff !default;
+$menu-submenu-background-alt: $submenu-background-item-hover !default;
+
+$menu-submenu-focus-text: $text-color !default;
+$menu-submenu-current-text: $text-color !default;
+
+$menu-bubble-text: $text-color-highlight !default;
+$menu-bubble-background: $notification-color !default;
+$menu-bubble-current-text: #fff !default;
+$menu-bubble-current-background: $notification-color !default;
+
+$menu-collapse-text: $menu-icon !default;
+$menu-collapse-icon: $menu-icon !default;
+$menu-collapse-focus-text: $text-color !default;
+$menu-collapse-focus-icon: $menu-highlight-icon !default;
+
+$adminbar-avatar-frame: lighten( $menu-background, 7% ) !default;
+$adminbar-input-background: lighten( $menu-background, 7% ) !default;
+
+$adminbar-recovery-exit-text: $menu-bubble-text !default;
+$adminbar-recovery-exit-background: $menu-bubble-background !default;
+$adminbar-recovery-exit-background-alt: mix(black, $adminbar-recovery-exit-background, 10%) !default;
+
+$menu-customizer-text: mix( $base-color, $text-color, 40% ) !default;

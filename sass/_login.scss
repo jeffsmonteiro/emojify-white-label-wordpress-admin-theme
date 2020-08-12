@@ -1,0 +1,40 @@
+body.login{
+  #login{
+    form#loginform{
+      border: none;
+      background-color: transparent;
+      p label{}
+      input{}
+      .wp-social-login-widget{
+        display: none;
+      }
+      p.forgetmenot{
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+      }
+      p.submit{
+        input#wp-submit{
+          width: 100%;
+          margin: 10px 0;
+          font-size: 1.2em;
+          font-weight: 600;
+        }
+      }
+      .user-pass-wrap{
+        .wp-pwd{
+          .wp-hide-pw{
+            color: $gray;
+          }
+
+        }
+      }
+    }
+    p#nav{
+      text-align: center;
+    }
+    p#backtoblog{
+      text-align: center;
+    }
+  }
+}

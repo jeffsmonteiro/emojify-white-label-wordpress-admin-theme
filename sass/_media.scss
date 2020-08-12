@@ -1,0 +1,23 @@
+.media-frame-tab-panel{
+  margin-top: 30px;
+}
+
+.search-form{
+  width: 100%;
+  background-color: #fff;
+  //padding: 20px 0;
+  display: flex;
+  .seach-box{
+    display: flex;
+  }
+  .wp-filter-search{
+    width: 100%;
+    top: 0px;
+    left: 0px
+  }
+}
+
+input[name="s"] {
+  width: 100% !important;
+  flex-grow: 1 !important;
+}

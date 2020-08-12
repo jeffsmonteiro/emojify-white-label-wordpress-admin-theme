@@ -1,0 +1,322 @@
+.ewlwat-emojify{
+
+  /* Override Dashicons by Emojis :) ==============================*/
+
+  #adminmenu{
+    div{
+      &.wp-menu-image{
+        // remove dashicons
+        display: none !important;
+      }
+    }
+    .wp-submenu-head{
+      .wp-menu-name{
+        // adjust menu to receive emojis
+        margin-left: 40px;
+        font-size: 0.9em;
+      }
+    }
+    a{
+      &.menu-top{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.3;
+        padding: 2px 0;
+        border-radius: 50px;
+        margin-bottom: 4px;
+        @include breakpoint( large ){
+          padding: 0;
+        }
+        &::before{
+          font-size: 1.5em;
+          position: absolute;
+          left: 9px;
+          top: 3px;
+          @include breakpoint( large ){
+            top: 7px;
+          }
+          @include breakpoint( medium ){
+            top: 11px;
+          }
+        }
+        .wp-menu-name{
+          // adjust menu to receive emojis
+          margin-left: 40px;
+          font-size: 0.9em;
+        }
+      }
+    }
+    li{
+      > a{
+        // adjust menu to receive emojis
+        //padding-left: 32px;
+        &.menu-top{
+          &:focus, &:hover{
+            background-color: $menu-item-selected;
+          }
+        }
+      }
+      &.wp-has-current-submenu{
+        a { 
+          &.wp-has-current-submenu{
+            background: $menu-item-selected;
+            color: $text-color;
+            font-weight: bold;
+            &:hover { 
+              box-shadow: none;
+            }
+          }
+        }
+      }
+      &.opensub { 
+        a > {
+          .menu-top {
+            background-color: $menu-item-selected;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  &.folded {
+    #adminmenu {
+      li {
+        > a {
+          padding-left: 0;
+        }
+      }
+      a{
+        &.menu-top{
+          padding: 0;
+          &::before{
+            left: 9px;
+            top: 9px;
+            @include breakpoint( medium ){
+              top: 9px;
+            }
+          }
+        }
+      }
+    }
+    @include breakpoint( medium ){
+      #adminmenu{
+        a {
+          &.menu-top{
+            width: calc( 100% - 10px ) !important;
+            // background-color: $menu-item-selected;
+            // &:hover, &:focus, &:active{
+            //   background-color: $menu-item-selected;
+            // }
+          }
+        }
+        li{
+          &.wp-has-current-submenu{
+            background-color: transparent !important;
+            .wp-submenu{
+              background: $menu-background !important;
+              box-shadow: none !important;
+            }
+          }
+          &.wp-menu-open, &.selected{
+            > a {
+              background: $menu-item-selected !important;
+            }
+            
+          }
+        }
+      }
+    }
+  }
+
+  a.toplevel_page_personal-trainer-menu::before{
+    content: '💪';
+  }
+
+  a.toplevel_page_nutri-menu::before{
+    content: '🍵';
+  }
+
+  a.menu-icon-dashboard::before{
+    content: '🚀';
+  }
+
+  a.menu-icon-post::before{
+    content: '✍';
+  }
+
+  a.menu-icon-media::before{
+    content: '📸';
+  }
+
+  a.menu-icon-page::before{
+    content: '📄';
+  }
+
+  a.menu-icon-comments::before{
+    content: '📣';
+  }
+
+  a.toplevel_page_woocommerce::before{
+    content: '🛒';
+  }
+
+  a.menu-icon-product::before{
+    content: '🥫';
+  }
+
+  a.menu-icon-appearance::before{
+    content: '🎨';
+  }
+
+  a.menu-icon-plugins::before{
+    content: '🔌';
+  }
+
+  a.menu-icon-users::before{
+    content: '🙋';
+  }
+
+  a.menu-icon-tools::before{
+    content: '⛏';
+  }
+
+  a.menu-icon-settings::before{
+    content: '👌';
+  }
+
+  a.toplevel_page_wp-mail-smtp::before{
+    content: '💌';
+  }
+
+  a.toplevel_page_material-wp_settings::before{
+    content: '🙈';
+  }
+
+  a.toplevel_page_meta-box::before{
+    content: '🙉';
+  }
+
+  a.toplevel_page_mt-setup::before{
+    content: '🙊';
+  }
+
+  a.toplevel_page_algolia::before{
+    content: '🔍';
+  }
+
+  a.toplevel_page_wpcf7::before{
+    content: '📥';
+  }
+  
+  #toplevel_page_all-in-one-seo-pack-aioseop_class > a::before{
+    content: '🥇';
+  }
+
+  a.toplevel_page_wpseo_dashboard::before{
+    content: '🥇';
+  }
+
+  #toplevel_page_edit-post_type-acf-field-group > a::before{
+    content: '📰';
+  }
+  
+  a.toplevel_page_ai1wm_export::before{
+    content: '🧳';
+  }
+
+  a.toplevel_page_elementor::before{
+    content: '🖌️';
+  }
+
+  a.toplevel_page_exactmetrics_reports::before{
+    content: '📊';
+  }
+
+  a.toplevel_page_monsterinsights_reports::before{
+    content: '👾';
+  }
+  
+  a.toplevel_page_jetpack::before{
+    content: '🧪';
+  }
+
+  a.toplevel_page_mailchimp-for-wp::before{
+    content: '📬';
+  }
+
+  a.toplevel_page_smush::before{
+    content: '🗜️';
+  }
+  a.toplevel_page_Wordfence::before,
+  a.toplevel_page_aiowpsec::before,
+  a.toplevel_page_itsec::before {
+    content: '👮';
+  }
+  
+  a.toplevel_page_wpforms-overview::before{
+    content: '🐻';
+  }
+
+  a.toplevel_page_wpfastestcacheoptions::before,
+  a.toplevel_page_lscache-settings::before{
+    content:'⚡';
+  }
+
+  a.toplevel_page_WP-Optimize::before{
+    content:'⏱';
+  }
+  a.toplevel_page_sb-instagram-feed::before{
+    content: '🌆';
+  }
+
+  a.toplevel_page_seed_csp4::before{
+    content:'🚧';
+  }
+
+  a.toplevel_page_cptui_main_menu::before{
+    content: '📚';
+  }
+  a.menu-icon-cookielawinfo::before{
+    content: '🍪';
+  }
+  a.toplevel_page_loco::before{
+    content: '🌎';
+  }
+
+  a.toplevel_page_loginizer::before{
+    content: '🛡️';
+  }
+
+  a.toplevel_page_mailchimp-woocommerce::before{
+    content: '🐒';
+  }
+  a.toplevel_page_nextgen-gallery::before{
+    content: '🖼️';
+  }
+  
+  a.toplevel_page_ninja-forms::before{
+    content: '📋';
+  }
+  a.toplevel_page_optin-monster-api-settings::before{
+    content: '🧟‍♂️';
+  }
+  a.toplevel_page_shortcodes-ultimate::before{
+    content: '🐇';
+  }
+
+  #toplevel_page_wc-admin-path--analytics-revenue > a::before{
+    content: '📈';
+  }
+  // fix header bug of plugin
+  .woocommerce-layout__header{
+    top: 60px;
+  }
+
+  a.toplevel_page_tablepress::before{
+    content: '🤓';
+  }
+
+  a.menu-icon-tribe_events::before{
+    content: '🤘';
+  } 
+}
