@@ -70,7 +70,10 @@
 // }
 
 @mixin breakpoint($break) {
-	@if $break == 'large' {
+	@if $break == 'xlarge' {
+		@media only screen and (max-width: 1280px) { @content; }
+	}
+	@else if $break == 'large' {
 		@media only screen and (max-width: 960px) { @content; }
 	}
 	@else if $break == 'minlarge' {

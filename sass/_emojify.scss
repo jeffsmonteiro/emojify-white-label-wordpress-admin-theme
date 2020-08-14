@@ -1,7 +1,50 @@
+/* Style Emojis Panel ==============================*/
+.settings_page_ewlwat{
+  .emojionearea.emojionearea-inline > .emojionearea-editor {
+    left: 0 !important;
+  }
+}
+.ewlwat-emojify-settings{
+  display: flex;
+  flex-direction: row;
+  > th{
+    //display: none;
+  }
+  td{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    .item-menu-to-emoji{
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #ccc;
+      margin: 8px;
+      padding: 8px;
+      width: calc( 32% - 18px);
+      @include breakpoint(xlarge){
+        width: calc( 48% - 22px);
+      }
+      @include breakpoint(large){
+        width: calc( 48% - 22px);
+      }
+      @include breakpoint(medium){
+        width: calc( 48% - 24px);
+      }
+      @include breakpoint(small){
+        width: 100%;
+      }
+      .item-menu-title-to-emoji{
+        font-weight: bold;
+      }
+
+    }
+  }
+}
+
+/* Override Dashicons by Emojis :) ==============================*/
+
 .ewlwat-emojify{
-
-  /* Override Dashicons by Emojis :) ==============================*/
-
   #adminmenu{
     div{
       &.wp-menu-image{
@@ -128,195 +171,184 @@
     }
   }
 
-  a.toplevel_page_personal-trainer-menu::before{
-    content: '💪';
-  }
+  // Defaults
 
-  a.toplevel_page_nutri-menu::before{
-    content: '🍵';
-  }
-
-  a.menu-icon-dashboard::before{
-    content: '🚀';
-  }
-
-  a.menu-icon-post::before{
+  // #menu-dashboard > a::before{
+  //   content: '🚀';
+  // }
+  li a .dashicons-admin-post::before{
     content: '✍';
   }
+  // #menu-media > a::before{
+  //   content: '📸';
+  // }
+  // #menu-pages > a::before{
+  //   content: '📄';
+  // }
+  // #menu-comments > a::before{
+  //   content: '📣';
+  // }
+  // #menu-appearance > a::before{
+  //   content: '🎨';
+  // }
+  // #menu-plugins > a::before{
+  //   content: '🔌';
+  // }
+  // #menu-users > a::before{
+  //   content: '🙋';
+  // }
+  // #menu-tools > a::before{
+  //   content: '⛏';
+  // }
+  // #menu-settings > a::before{
+  //   content: '👌';
+  // }
 
-  a.menu-icon-media::before{
-    content: '📸';
-  }
+  // a.toplevel_page_googlesitekit-dashboard::before{
+  //   content: '🧮';
+  // }
 
-  a.menu-icon-page::before{
-    content: '📄';
-  }
+  // a.toplevel_page_woocommerce::before{
+  //   content: '🛒';
+  // }
 
-  a.menu-icon-comments::before{
-    content: '📣';
-  }
+  // a.menu-icon-product::before{
+  //   content: '🥫';
+  // }
 
-  a.toplevel_page_woocommerce::before{
-    content: '🛒';
-  }
+  // a.toplevel_page_wp-mail-smtp::before{
+  //   content: '💌';
+  // }
 
-  a.menu-icon-product::before{
-    content: '🥫';
-  }
+  // a.toplevel_page_material-wp_settings::before{
+  //   content: '🙈';
+  // }
 
-  a.menu-icon-appearance::before{
-    content: '🎨';
-  }
+  // a.toplevel_page_meta-box::before{
+  //   content: '🙉';
+  // }
 
-  a.menu-icon-plugins::before{
-    content: '🔌';
-  }
+  // a.toplevel_page_mt-setup::before{
+  //   content: '🙊';
+  // }
 
-  a.menu-icon-users::before{
-    content: '🙋';
-  }
+  // a.toplevel_page_algolia::before{
+  //   content: '🔍';
+  // }
 
-  a.menu-icon-tools::before{
-    content: '⛏';
-  }
-
-  a.menu-icon-settings::before{
-    content: '👌';
-  }
-
-  a.toplevel_page_wp-mail-smtp::before{
-    content: '💌';
-  }
-
-  a.toplevel_page_material-wp_settings::before{
-    content: '🙈';
-  }
-
-  a.toplevel_page_meta-box::before{
-    content: '🙉';
-  }
-
-  a.toplevel_page_mt-setup::before{
-    content: '🙊';
-  }
-
-  a.toplevel_page_algolia::before{
-    content: '🔍';
-  }
-
-  a.toplevel_page_wpcf7::before{
-    content: '📥';
-  }
+  // a.toplevel_page_wpcf7::before{
+  //   content: '📥';
+  // }
   
-  #toplevel_page_all-in-one-seo-pack-aioseop_class > a::before{
-    content: '🥇';
-  }
+  // #toplevel_page_all-in-one-seo-pack-aioseop_class > a::before{
+  //   content: '🥇';
+  // }
 
-  a.toplevel_page_wpseo_dashboard::before{
-    content: '🥇';
-  }
+  // a.toplevel_page_wpseo_dashboard::before{
+  //   content: '🥇';
+  // }
 
-  #toplevel_page_edit-post_type-acf-field-group > a::before{
-    content: '📰';
-  }
+  // #toplevel_page_edit-post_type-acf-field-group > a::before{
+  //   content: '📰';
+  // }
   
-  a.toplevel_page_ai1wm_export::before{
-    content: '🧳';
-  }
+  // a.toplevel_page_ai1wm_export::before{
+  //   content: '🧳';
+  // }
 
-  a.toplevel_page_elementor::before{
-    content: '🖌️';
-  }
+  // a.toplevel_page_elementor::before{
+  //   content: '🖌️';
+  // }
 
-  a.toplevel_page_exactmetrics_reports::before{
-    content: '📊';
-  }
+  // a.toplevel_page_exactmetrics_reports::before{
+  //   content: '📊';
+  // }
 
-  a.toplevel_page_monsterinsights_reports::before{
-    content: '👾';
-  }
+  // a.toplevel_page_monsterinsights_reports::before{
+  //   content: '👾';
+  // }
   
-  a.toplevel_page_jetpack::before{
-    content: '🧪';
-  }
+  // a.toplevel_page_jetpack::before{
+  //   content: '🧪';
+  // }
 
-  a.toplevel_page_mailchimp-for-wp::before{
-    content: '📬';
-  }
+  // a.toplevel_page_mailchimp-for-wp::before{
+  //   content: '📬';
+  // }
 
-  a.toplevel_page_smush::before{
-    content: '🗜️';
-  }
-  a.toplevel_page_Wordfence::before,
-  a.toplevel_page_aiowpsec::before,
-  a.toplevel_page_itsec::before {
-    content: '👮';
-  }
+  // a.toplevel_page_smush::before{
+  //   content: '🗜️';
+  // }
+  // a.toplevel_page_Wordfence::before,
+  // a.toplevel_page_aiowpsec::before,
+  // a.toplevel_page_itsec::before {
+  //   content: '👮';
+  // }
   
-  a.toplevel_page_wpforms-overview::before{
-    content: '🐻';
-  }
+  // a.toplevel_page_wpforms-overview::before{
+  //   content: '🐻';
+  // }
 
-  a.toplevel_page_wpfastestcacheoptions::before,
-  a.toplevel_page_lscache-settings::before{
-    content:'⚡';
-  }
+  // a.toplevel_page_wpfastestcacheoptions::before,
+  // a.toplevel_page_lscache-settings::before{
+  //   content:'⚡';
+  // }
 
-  a.toplevel_page_WP-Optimize::before{
-    content:'⏱';
-  }
-  a.toplevel_page_sb-instagram-feed::before{
-    content: '🌆';
-  }
+  // a.toplevel_page_WP-Optimize::before{
+  //   content:'⏱';
+  // }
+  // a.toplevel_page_sb-instagram-feed::before{
+  //   content: '🌆';
+  // }
 
-  a.toplevel_page_seed_csp4::before{
-    content:'🚧';
-  }
+  // a.toplevel_page_seed_csp4::before{
+  //   content:'🚧';
+  // }
 
-  a.toplevel_page_cptui_main_menu::before{
-    content: '📚';
-  }
-  a.menu-icon-cookielawinfo::before{
-    content: '🍪';
-  }
-  a.toplevel_page_loco::before{
-    content: '🌎';
-  }
+  // a.toplevel_page_cptui_main_menu::before{
+  //   content: '📚';
+  // }
+  // a.menu-icon-cookielawinfo::before{
+  //   content: '🍪';
+  // }
+  // a.toplevel_page_loco::before{
+  //   content: '🌎';
+  // }
 
-  a.toplevel_page_loginizer::before{
-    content: '🛡️';
-  }
+  // a.toplevel_page_loginizer::before{
+  //   content: '🛡️';
+  // }
 
-  a.toplevel_page_mailchimp-woocommerce::before{
-    content: '🐒';
-  }
-  a.toplevel_page_nextgen-gallery::before{
-    content: '🖼️';
-  }
+  // a.toplevel_page_mailchimp-woocommerce::before{
+  //   content: '🐒';
+  // }
+  // a.toplevel_page_nextgen-gallery::before{
+  //   content: '🖼️';
+  // }
   
-  a.toplevel_page_ninja-forms::before{
-    content: '📋';
-  }
-  a.toplevel_page_optin-monster-api-settings::before{
-    content: '🧟‍♂️';
-  }
-  a.toplevel_page_shortcodes-ultimate::before{
-    content: '🐇';
-  }
+  // a.toplevel_page_ninja-forms::before{
+  //   content: '📋';
+  // }
+  // a.toplevel_page_optin-monster-api-settings::before{
+  //   content: '🧟‍♂️';
+  // }
+  // a.toplevel_page_shortcodes-ultimate::before{
+  //   content: '🐇';
+  // }
 
-  #toplevel_page_wc-admin-path--analytics-revenue > a::before{
-    content: '📈';
-  }
-  // fix header bug of plugin
-  .woocommerce-layout__header{
-    top: 60px;
-  }
+  // #toplevel_page_wc-admin-path--analytics-revenue > a::before{
+  //   content: '📈';
+  // }
+  // // fix header bug of plugin
+  // .woocommerce-layout__header{
+  //   top: 60px;
+  // }
 
-  a.toplevel_page_tablepress::before{
-    content: '🤓';
-  }
+  // a.toplevel_page_tablepress::before{
+  //   content: '🤓';
+  // }
 
-  a.menu-icon-tribe_events::before{
-    content: '🤘';
-  } 
+  // a.menu-icon-tribe_events::before{
+  //   content: '🤘';
+  // } 
 }

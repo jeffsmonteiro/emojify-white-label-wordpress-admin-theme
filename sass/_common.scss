@@ -11,6 +11,12 @@ html{
       padding-top: 60px;
     }
   }
+  #update-nag, .update-nag{
+    margin: 25px 20px 0 40px;
+    @include breakpoint( medium ){
+      margin: 25px 20px 0 10px;
+    }
+  }
   body #wpwrap #wpcontent #wpbody #wpbody-content{
     position: relative;
     min-height: 100%;
@@ -41,7 +47,9 @@ html{
       margin-left: 0;
     }
   }
-  
+  tr.user-admin-color-wrap{
+    display: none;
+  }
   #wpcontent {
     margin-left: 201px;
     padding: 0;
@@ -102,15 +110,6 @@ html{
     position: relative;
     background-color: #fff;
     margin: 0;
-    > .notice{
-      // position: fixed;
-      // bottom: 20px;
-      // right: 20px;
-      // width: 300px;
-      // webkit-box-shadow: 0 0px 10px 0 rgba(0,0,0,.2)!important;
-      // box-shadow: 0 0px 10px 0 rgba(0,0,0,.2)!important;
-      // z-index: 9999999;
-    }
     .wp-heading-inline, h1{
       color: $gray;
       font-weight: 600;
@@ -148,36 +147,38 @@ html{
 
     a[href*="-new.php"],
     a[href$="-install.php"]{
-      background-color: $yellow-light;
-      border-radius: 16px;
-      border: 1px solid $yellow-light;
-      padding: 12px 12px;
-      font-size: 0px;
-      color: transparent;
-      height: 24px;
-      width: 2px;
-      position: relative;
-      top: -11px;
-      &:hover{
-        background-color: $yellow;
-      }
-      &:after{
-        content: '';
+      &:not(.welcome-icon){
+        background-color: $yellow-light;
+        border-radius: 16px;
+        border: 1px solid $yellow-light;
+        padding: 12px 12px;
+        font-size: 0px;
+        color: transparent;
+        height: 24px;
         width: 2px;
-        height: 16px;
-        background-color: #fff;
-        position: absolute;
-        top: 4px;
-        left: 11px;
-      }
-      &:before{
-        content: '';
-        width: 16px;
-        height: 2px;
-        background-color: #fff;
-        position: absolute;
-        top: 10.5px;
-        left: 4px;
+        position: relative;
+        top: -11px;
+        &:hover{
+          background-color: $yellow;
+        }
+        &:after{
+          content: '';
+          width: 2px;
+          height: 16px;
+          background-color: #fff;
+          position: absolute;
+          top: 4px;
+          left: 11px;
+        }
+        &:before{
+          content: '';
+          width: 16px;
+          height: 2px;
+          background-color: #fff;
+          position: absolute;
+          top: 10.5px;
+          left: 4px;
+        }
       }
     }
     .screen-reader-text{

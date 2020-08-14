@@ -796,7 +796,7 @@ if ( ! class_exists( 'Boo_Settings_Helper' ) ):
 				$args['value'],
 				$this->get_markup_placeholder( $args['placeholder'] ),
 				$args['name'],
-				$args['class']
+				$args['input_class']
 			);
 			$html .= $this->get_field_description( $args );
 

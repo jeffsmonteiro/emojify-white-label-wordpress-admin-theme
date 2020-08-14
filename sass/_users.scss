@@ -29,3 +29,19 @@ body.users-php{
     }
   }
 }
+
+body.profile-php{
+  .user-profile-picture{
+    td{
+      img{
+        border-radius: 50px;
+      }
+    }
+  }
+}
+
+.defaultavatarpicker{
+  .avatar{
+    border-radius: 50px;
+  }
+}
