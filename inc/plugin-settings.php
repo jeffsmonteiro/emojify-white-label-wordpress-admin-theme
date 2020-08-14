@@ -36,8 +36,8 @@ function ewlwat_settings_page() {
         'desc'  => '',
       ),
       array(
-        'id'    => 'about_section',
-        'title' => __( 'About', 'ewlwat' ),
+        'id'    => 'help_section',
+        'title' => __( 'Help', 'ewlwat' ),
         'desc'  => __( '', 'ewlwat' )
       )
     );
@@ -157,36 +157,47 @@ function ewlwat_settings_page() {
         // they will displayed before the emoji selectors
       ),
 
-      'about_section' => array(
+      'help_section' => array(
         array(
-          'id'    => 'why',
-          'label' => __( 'The gu•theme•berg', 'ewlwat' ),
-          'desc'  => __( '<p>After launch of Gutenberg as a feature by WordPress, the Admin Interface design set was a little disconnected. Then inspired by the Gutenberg interface, this theme was created. However, you should not believe that we intend to replace the standard WordPress interface. This is just an alternative for enthusiasts.</p> ', 'ewlwat' ),
+          'id'    => 'question_1',
+          'label' => __( "Emojify not working", "ewlwat" ),
+          'desc'  => __( "<p>To enable emojify you need to check the option on Emojify Settings tab. if the emojis still don't appear, contact the support .</p> ", "ewlwat" ),
           'type'  => 'html'
         ),
         array(
-          'id'    => 'freedom_and_loyalty',
-          'label' => __( 'Freedom and Loyalty', 'ewlwat' ),
-          'desc'  => __( '<p>WordPress is an amazing resource. Imagine that more than 30% of all internet sites use this tool and its creator has accepted that we have free access to it, in addition to being able to modify it. However, in order to enjoy this freedom, we believe that it is necessary to have loyalty to the basic concepts behind WordPress. So in the guise of saying that everything here was built without changes to the core and making the most of the native resources offered by the source code.</p> ', 'ewlwat' ),
+          'id'    => 'question_2',
+          'label' => __( "Where do I customize emojis?", "ewlwat" ),
+          'desc'  => __( "<p>You can customize all menu items with emojis on Emojify Settings tab. Sometimes it can take a while to load the emojis, but not more than 30 seconds.</p> ", "ewlwat" ),
           'type'  => 'html'
         ),
         array(
-          'id'    => 'who',
-          'label' => __( 'Who', 'ewlwat' ),
-          'desc'  => __( '<p>The creator of <b>gu•theme•berg</b> is <a href="https://www.linkedin.com/in/jeff-monteiro/" target="_blank">Jeff Monteiro</a>, a designer (and developer) based in São Paulo, Brazil. With some years of experience in design and very close to development teams, he started to create his own codes, mainly through solutions built with WordPress. </p> ', 'ewlwat' ),
+          'id'    => 'question_3',
+          'label' => __( "Can I use custom icons and emojis?", "ewlwat" ),
+          'desc'  => __( "<p>No. Once emojis are enabled, the plugin will attempt to replace all menu icons.</p> ", "ewlwat" ),
           'type'  => 'html'
         ),
         array(
-          'id'    => 'donate',
-          'label' => __( 'Buy me a coffee', 'ewlwat' ),
-          'desc'  => __( "<p>There aren't many theme options for the WordPress Admin. If you want to change this environment, you will need to make your own theme or maybe buy one. These paid themes are usually sold for USD20. If you think you have saved some money and are satisfied with the <b>gu•theme•berg</b>, feel free to buy me a coffee.</p><div style='display: block; margin-top:40px;'><style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 10px 7px 10px !important;line-height: 35px !important;height:51px !important;min-width:217px !important;text-decoration: none !important;display:inline-flex !important;color:#000000 !important;background-color:#FFDD00 !important;border-radius: 5px !important;border: 1px solid transparent !important;padding: 7px 10px 7px 10px !important;font-size: 20px !important;letter-spacing:-0.08px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Lato', sans-serif !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#000000 !important;}</style><link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet'><a class='bmc-button' target='_blank' href='https://www.buymeacoffee.com/ewlwat'><img src='https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg' alt='Buy me a coffee'><span style='margin-left:15px;font-size:19px !important;'>Buy me a coffee</span></a></div>
-            ", "ewlwat" ),
+          'id'    => 'question_4',
+          'label' => __( "I can't replace some emojis", "ewlwat" ),
+          'desc'  => __( "<p>Some plugins have bugs in the menu register. To prevent you from running out of icons, we've added some directly to the code. When the plugins make corrections to your codes, you will automatically be able to change the emoji.</p> ", "ewlwat" ),
           'type'  => 'html'
         ),
         array(
-          'id'    => 'web_page',
-          'label' => __( 'More', 'ewlwat' ),
-          'desc'  => __( '<a href="https://jeffmonteiro.gitbook.io/ewlwat/" target="_blank">Official Page</a>', 'ewlwat' ),
+          'id'    => 'question_5',
+          'label' => __( "No emoji I set is changed in the menu", "ewlwat" ),
+          'desc'  => __( "<p>In that case, the problem is in your database. It must be configured to the recommended standard for WordPress, in this case utf8-unicode. Otherwise nothing will work!</p> ", "ewlwat" ),
+          'type'  => 'html'
+        ),
+        array(
+          'id'    => 'question_6',
+          'label' => __( "Some emojis don't appear in the menu", "ewlwat" ),
+          'desc'  => __( "<p>Try to open the Emojify Settings tab and set the emoji for the item that is not appearing and save the settings. If the emoji still does not appear, contact support.</p> ", "ewlwat" ),
+          'type'  => 'html'
+        ),
+        array(
+          'id'    => 'question_7',
+          'label' => __( "How do I contact the support", "ewlwat" ),
+          'desc'  => __( "<p>You can open a ticket on <a href='https://envato.com/' target='_blank'>Envato Market</a></p> ", "ewlwat" ),
           'type'  => 'html'
         ),
       )
