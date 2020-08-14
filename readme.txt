@@ -1,10 +1,9 @@
 === Emojify White Label WordPress Admin Theme ===
 Contributors: Jeff Monteiro
-Donate link: https://www.buymeacoffee.com/ewlwat
-Tags: admin theme, free admin theme, white label admin theme
+Tags: white label wordpress admin theme, admin theme, emoji wordpress admin theme
 Requires at least: 4.6
 Tested up to: 5.3.2
-Stable tag: 0.1.1
+Stable tag: 1.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,20 +17,23 @@ Finally, it is also possible to make the admin interface a little more fun by ac
 
 FEATURES
 
+- Hide WordPress logo from admin navigation bar
 - Use your own logo in admin top navigation bar 
 - Replace WordPress logo by yours in login page
+- Change the background color of login page
+- Replace WP logo by your on post edit page (Gutenberg)
 - Add a custom favicon in admin area
-- Hide WordPress logo from admin navigation bar
+- Remove non-functional WP widgets from dashboard
+- Replace dashicons on side bar by emojis!
 - Replace or hide WordPress text on footer
 - Hide WordPress version disclaimer on footer
-- Replace dashicons on side bar by emojis!
 
 
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/ewlwat` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
-3. Use the Settings->Admin Theme screen to configure the plugin
+3. Use the Settings->Emojify Admin Theme screen to configure the plugin
 
 == Screenshots ==
 

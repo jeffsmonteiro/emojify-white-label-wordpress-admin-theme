@@ -173,182 +173,219 @@
 
   // Defaults
 
-  // #menu-dashboard > a::before{
-  //   content: '🚀';
-  // }
-  li a .dashicons-admin-post::before{
+  #menu-dashboard > a::before{
+    content: '📺';
+  }
+
+  #menu-media > a::before{
+    content: '📸';
+  }
+
+  #menu-links > a::before{
+    content: '🔗';
+  }
+
+  #menu-comments > a::before{
+    content: '📢';
+  }
+
+  #menu-posts > a::before{
     content: '✍';
   }
-  // #menu-media > a::before{
-  //   content: '📸';
-  // }
-  // #menu-pages > a::before{
-  //   content: '📄';
-  // }
-  // #menu-comments > a::before{
-  //   content: '📣';
-  // }
-  // #menu-appearance > a::before{
-  //   content: '🎨';
-  // }
-  // #menu-plugins > a::before{
-  //   content: '🔌';
-  // }
-  // #menu-users > a::before{
-  //   content: '🙋';
-  // }
-  // #menu-tools > a::before{
-  //   content: '⛏';
-  // }
-  // #menu-settings > a::before{
-  //   content: '👌';
-  // }
 
-  // a.toplevel_page_googlesitekit-dashboard::before{
-  //   content: '🧮';
-  // }
+  #menu-pages > a::before{
+    content: '📝';
+  }
 
-  // a.toplevel_page_woocommerce::before{
-  //   content: '🛒';
-  // }
+  #menu-posts-forum > a::before{
+    content: '💬';
+  }
 
-  // a.menu-icon-product::before{
-  //   content: '🥫';
-  // }
+  #menu-posts-topic > a::before{
+    content: '🗃';
+  }
 
-  // a.toplevel_page_wp-mail-smtp::before{
-  //   content: '💌';
-  // }
+  #menu-posts-reply > a::before{
+    content: '📥';
+  }
 
-  // a.toplevel_page_material-wp_settings::before{
-  //   content: '🙈';
-  // }
+  #menu-posts-elementor_library > a::before{
+    content: '📐';
+  }
 
-  // a.toplevel_page_meta-box::before{
-  //   content: '🙉';
-  // }
+  #menu-posts-product > a::before{
+    content: '🥫';
+  }
 
-  // a.toplevel_page_mt-setup::before{
-  //   content: '🙊';
-  // }
+  #menu-posts-bp-email > a::before{
+    content: '💌';
+  }
 
-  // a.toplevel_page_algolia::before{
-  //   content: '🔍';
-  // }
+  #menu-posts-cookielawinfo > a::before{
+    content: '👍';
+  }
 
-  // a.toplevel_page_wpcf7::before{
-  //   content: '📥';
-  // }
-  
-  // #toplevel_page_all-in-one-seo-pack-aioseop_class > a::before{
-  //   content: '🥇';
-  // }
+  #menu-posts-tribe_events > a::before{
+    content: '📆';
+  }
 
-  // a.toplevel_page_wpseo_dashboard::before{
-  //   content: '🥇';
-  // }
+  #menu-appearance > a::before{
+    content: '🎨';
+  }
 
-  // #toplevel_page_edit-post_type-acf-field-group > a::before{
-  //   content: '📰';
-  // }
-  
-  // a.toplevel_page_ai1wm_export::before{
-  //   content: '🧳';
-  // }
+  #menu-plugins > a::before{
+    content: '🍭';
+  }
 
-  // a.toplevel_page_elementor::before{
-  //   content: '🖌️';
-  // }
+  #menu-users > a::before{
+    content: '👥';
+  }
 
-  // a.toplevel_page_exactmetrics_reports::before{
-  //   content: '📊';
-  // }
+  #menu-tools > a::before{
+    content: '🛠';
+  }
 
-  // a.toplevel_page_monsterinsights_reports::before{
-  //   content: '👾';
-  // }
-  
-  // a.toplevel_page_jetpack::before{
-  //   content: '🧪';
-  // }
+  #menu-settings > a::before{
+    content: '⚙';
+  }
 
-  // a.toplevel_page_mailchimp-for-wp::before{
-  //   content: '📬';
-  // }
+  #toplevel_page_yith_plugin_panel > a::before{
+    content: '🛸';
+  }
 
-  // a.toplevel_page_smush::before{
-  //   content: '🗜️';
-  // }
-  // a.toplevel_page_Wordfence::before,
-  // a.toplevel_page_aiowpsec::before,
-  // a.toplevel_page_itsec::before {
-  //   content: '👮';
-  // }
-  
-  // a.toplevel_page_wpforms-overview::before{
-  //   content: '🐻';
-  // }
+  #toplevel_page_wpseo_dashboard > a::before{
+    content: '🥇';
+  }
 
-  // a.toplevel_page_wpfastestcacheoptions::before,
-  // a.toplevel_page_lscache-settings::before{
-  //   content:'⚡';
-  // }
+  #toplevel_page_woocommerce-marketing > a::before{
+    content: '🔥';
+  }
 
-  // a.toplevel_page_WP-Optimize::before{
-  //   content:'⏱';
-  // }
-  // a.toplevel_page_sb-instagram-feed::before{
-  //   content: '🌆';
-  // }
+  #toplevel_page_wpcf7 > a::before{
+    content: '📩';
+  }
 
-  // a.toplevel_page_seed_csp4::before{
-  //   content:'🚧';
-  // }
+  #toplevel_page_wpforms-overview > a::before{
+    content: '📋';
+  }
 
-  // a.toplevel_page_cptui_main_menu::before{
-  //   content: '📚';
-  // }
-  // a.menu-icon-cookielawinfo::before{
-  //   content: '🍪';
-  // }
-  // a.toplevel_page_loco::before{
-  //   content: '🌎';
-  // }
+  #toplevel_page_woocommerce > a::before{
+    content: '🛍';
+  }
 
-  // a.toplevel_page_loginizer::before{
-  //   content: '🛡️';
-  // }
+  #toplevel_page_amp-options > a::before{
+    content: '⚡';
+  }
 
-  // a.toplevel_page_mailchimp-woocommerce::before{
-  //   content: '🐒';
-  // }
-  // a.toplevel_page_nextgen-gallery::before{
-  //   content: '🖼️';
-  // }
-  
-  // a.toplevel_page_ninja-forms::before{
-  //   content: '📋';
-  // }
-  // a.toplevel_page_optin-monster-api-settings::before{
-  //   content: '🧟‍♂️';
-  // }
-  // a.toplevel_page_shortcodes-ultimate::before{
-  //   content: '🐇';
-  // }
+  #toplevel_page_edit-post_type-acf-field-group > a::before{
+    content: '📋';
+  }
 
-  // #toplevel_page_wc-admin-path--analytics-revenue > a::before{
-  //   content: '📈';
-  // }
-  // // fix header bug of plugin
-  // .woocommerce-layout__header{
-  //   top: 60px;
-  // }
+  #toplevel_page_aiowpsec > a::before{
+    content: '🛡';
+  }
 
-  // a.toplevel_page_tablepress::before{
-  //   content: '🤓';
-  // }
+  #toplevel_page_duplicator > a::before{
+    content: '🖇';
+  }
 
-  // a.menu-icon-tribe_events::before{
-  //   content: '🤘';
-  // } 
+  #toplevel_page_elite-licenser-lite > a::before{
+    content: '👽';
+  }
+
+  #toplevel_page_loginizer > a::before{
+    content: '⚔';
+  }
+
+  #toplevel_page_ninja-forms > a::before{
+    content: '📋';
+  }
+
+  #toplevel_page_rank-math-registration > a::before{
+    content: '🥇';
+  }
+
+  #toplevel_page_w3tc_dashboard > a::before{
+    content: '💫';
+  }
+
+  #toplevel_page_Wordfence > a::before{
+    content: '🛡';
+  }
+
+  #toplevel_page_wpfastestcacheoptions > a::before{
+    content: '💫';
+  }
+
+  #toplevel_page_WP-Optimize > a::before{
+    content: '💫';
+  }
+
+  #toplevel_page_nextgen-gallery > a::before{
+    content: '🌅';
+  }
+
+  #toplevel_page_mailchimp-for-wp > a::before{
+    content: '🐵';
+  }
+
+  #toplevel_page_ai1wm_export > a::before{
+    content: '🛩';
+  }
+
+  #toplevel_page_bp-activity > a::before{
+    content: '🤖';
+  }
+
+  #toplevel_page_seed_csp4 > a::before{
+    content: '🖍';
+  }
+
+  #toplevel_page_exactmetrics_reports > a::before{
+    content: '🤓';
+  }
+
+  #toplevel_page_monsterinsights_reports > a::before{
+    content: '💡';
+  }
+
+  #toplevel_page_litespeed > a::before{
+    content: '💫';
+  }
+
+  #toplevel_page_googlesitekit-dashboard > a::before{
+    content: '⛱';
+  }
+
+  #toplevel_page_wc-admin\&path\=\/analytics\/overview > a::before{
+    content: '🤓';
+  }
+
+  #toplevel_page_optin-monster-api-settings > a::before{
+    content: '😈';
+  }
+
+  #toplevel_page_tablepress > a::before{
+    content: '📰';
+  }
+
+  #toplevel_page_wp-mail-smtp > a::before{
+    content: '💌';
+  }
+
+  #toplevel_page_all-in-one-seo-pack-aioseop_class > a::before{
+    content: '🥇';
+  }
+
+  #toplevel_page_loco > a::before{
+    content: '🌐';
+  }
+
+  #toplevel_page_elementor > a::before{
+    content: '🎩';
+  }
+
+  #toplevel_page_jetpack > a::before{
+    content: '🎒';
+  }
 }

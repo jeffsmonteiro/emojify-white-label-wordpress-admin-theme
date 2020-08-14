@@ -80,6 +80,12 @@ ul#adminmenu > li.current > a.current:after {
 		text-align: center;
 		z-index: 26;
 	}
+	.has-current-submenu{
+		.awaiting-mod, .update-plugins{
+			background-color: #ca4a1f;
+			color: #fff;
+		}
+	}
 	.wp-menu-image {
 		img{
 			padding: 9px 0 0 0;
@@ -228,7 +234,7 @@ ul#adminmenu > li.current > a.current:after {
 			&.wp-has-current-submenu{
 				.update-plugins{
 					background-color: #ca4a1f;
-					color: $text-color;
+					color: #fff;
 				}
 			}
 		}

@@ -23,8 +23,6 @@ require_once( plugin_dir_path(__FILE__) . 'inc/class-boo-settings-helper.php');
 require_once( plugin_dir_path(__FILE__) . 'inc/plugin-settings.php');
 
 
-
-
 /**
 * Set default color scheme
 */
@@ -55,19 +53,23 @@ function ewlwat_load_options(){
 
 	$emojify 			= isset($options['ewlwat_emojify']) ? $options['ewlwat_emojify'] : 0 ;
 	$hide_wp 			= isset($options['ewlwat_hide_wp_logo']) ? $options['ewlwat_hide_wp_logo'] : 0;
-	$hide_version = isset($options['ewlwat_hide_wp_version']) ? $options['ewlwat_hide_wp_version'] : 0;
+	$clean_dash   = isset($options['ewlwat_clean_dashboard']) ? $options['ewlwat_clean_dashboard'] : 0;
 
 	// Add emojify class to body
 
 	if ( $emojify ):
 		add_filter( 'admin_body_class', 'ewlwat_add_body_class');
-		add_action( 'admin_head', 'emojify_admin_icons' );
+		add_action( 'admin_menu', 'emojify_admin_icons', 999 );
 	endif;
 
-	// Hide WP logo from admin bar
+
 
 	if ( $hide_wp ):
 		add_action( 'wp_before_admin_bar_render', 'ewlwat_remove_wp', 0 );
+	endif;
+
+	if ( $clean_dash ):
+		add_action('wp_dashboard_setup', 'ewlwat_clear_dashboard' );
 	endif;
 }
 add_filter('init', 'ewlwat_load_options');
@@ -103,6 +105,11 @@ function ewlwat_remove_wp() {
 
 
 
+
+
+
+
+
 /**
 * Add Custom Logo to Admin Bar
 */
@@ -114,6 +121,7 @@ function ewlwat_custom_brand_admin() {
 	$brand_header = isset($options['ewlwat_brand_header']) ? $options['ewlwat_brand_header'] : 0;
 	$brand_icon 	= isset($options['ewlwat_brand_favicon']) ? $options['ewlwat_brand_favicon'] : '';
 	$gutenberg 		= isset($options['ewlwat_brand_gutenberg']) ? $options['ewlwat_brand_gutenberg'] : 0;
+	$hide_version = isset($options['ewlwat_hide_wp_version']) ? $options['ewlwat_hide_wp_version'] : 0;
 
 	$head 				= '';
 	$style 				= '<style type="text/css">';
@@ -147,21 +155,24 @@ function ewlwat_custom_brand_admin() {
 			';
 	endif;
 
+	if( $hide_version ){
+		$style .= '#footer-upgrade{ display: none; }';
+	}
 
 	if( $gutenberg ):
 		$gutenberg = wp_get_attachment_url( $gutenberg );
 		
 		$style .="
-			.block-editor-page .block-editor-editor-skeleton__header .edit-post-header .components-button.edit-post-fullscreen-mode-close.has-icon {
+			.edit-post-header .components-button.edit-post-fullscreen-mode-close.has-icon {
 				background-color: #fff !important;
 			}
-			.block-editor-page .block-editor-editor-skeleton__header .edit-post-header .components-button.edit-post-fullscreen-mode-close.has-icon::after {
+			.edit-post-header .components-button.edit-post-fullscreen-mode-close.has-icon::after {
 				content: url('".$gutenberg."');
-				
 			}
-			.block-editor-page .block-editor-editor-skeleton__header .edit-post-header .components-button.edit-post-fullscreen-mode-close.has-icon > svg{
+			.edit-post-header .components-button.edit-post-fullscreen-mode-close.has-icon > svg{
 				display: none !important;
 			}
+			
 		";
 
 	endif;
@@ -248,7 +259,7 @@ add_filter('login_headerurl', 'apply_home_url');
 function ewlwat_footer_text(){
 
 	$options	= wp_load_alloptions();
-	$footer 	= isset($options['ewlwat_footer_text']) && $options['ewlwat_footer_text'] != '' ? trim($options['ewlwat_footer_text']) : '';
+	$footer 	= isset( $options['ewlwat_footer_text']) && $options['ewlwat_footer_text'] != '' ? trim($options['ewlwat_footer_text']) : '';
 	$footer 	= isset( $footer ) && $footer != ''  ? $footer : '';
 	
 	if( $footer != ''):
@@ -263,6 +274,25 @@ add_filter( 'admin_footer_text', 'ewlwat_footer_text' );
 
 
 
+/**
+* Remove WordPress Default Wigets from Dashboard
+*/
+
+
+function ewlwat_clear_dashboard() {
+
+	global $wp_meta_boxes;
+
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);       
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+}
+
+
+
+
 
 /**
 * Emojify Admin Icons
@@ -270,30 +300,31 @@ add_filter( 'admin_footer_text', 'ewlwat_footer_text' );
 
 function emojify_admin_icons() {
 
-	global $menu;
-	$css = '<style>';
+	add_action( 'admin_head', function(){
 
-	foreach( $menu as $item ){
-		
-		if( count( $item ) == 7 ){
+		global $menu;
+		$css = '<style>';
+
+		foreach( $menu as $item ){
 			
-			$emoji = get_option( 'ewlwat_emojify_'.$item[5] );	
-
-			if( $emoji ){
+			if( count( $item ) == 7 ){
 				
-				$css .= "
-					#".$item[5]." > a::before{
-						content: '".$emoji."' !important;
-					}
-				";
+				$emoji = get_option( 'ewlwat_emojify_'.$item[5] );
+
+				if( $emoji ){
+					
+					$css .= "
+						#".$item[5]." > a::before{
+							content: '".$emoji."' !important;
+						}
+					";
+				}
 			}
 		}
-	}
-	$css .= '</style>';
-	echo $css;
+		$css .= '</style>';
+		echo $css;
+	}, 10 );
 }
-
-
 
 
 

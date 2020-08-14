@@ -54,17 +54,24 @@ function ewlwat_settings_page() {
         ),
 
         array(
+          'id'    => 'clean_dashboard',
+          'label' => __( 'Clean Dashboard', 'ewlwat' ),
+          'desc'  => __( 'Removes non-functional widgets (WP Events and News, At Glance, etc)', 'ewlwat' ),
+          'type'  => 'checkbox',
+        ),
+
+        array(
           'id'          => 'footer_text',
           'label'       => __( 'Footer Text', 'ewlwat' ),
           'desc'        => __( 'If you want to replace WordPress text in footer of admin, you can do that using this field.', 'ewlwat' ),
           'placeholder' => __( 'HTML is unaccepted', 'ewlwat' ),
-          'type'        => 'textarea'
+          'type'        => 'text'
         ),
 
         array(
           'id'    => 'hide_wp_version',
           'label' => __( 'Hide WP Version', 'ewlwat' ),
-          'desc'  => __( 'Check hide text version in the footer', 'ewlwat' ),
+          'desc'  => __( 'Check to hide text version on footer', 'ewlwat' ),
           'type'  => 'checkbox',
         ),
 
@@ -197,9 +204,7 @@ function ewlwat_settings_page() {
 
     // Get current registered menus
     global $menu;
-    // echo '<pre>'; print_r($menu); echo '</pre>';
-    // die();
-    // Add fields for emojify
+
     foreach( $menu as $item ){
       if( count( $item ) == 7 ){
         array_push($config_array['fields']['emojify_section'], array(
@@ -217,4 +222,4 @@ function ewlwat_settings_page() {
   }
 }
 
-add_action( 'admin_menu', 'ewlwat_settings_page' );
+add_action( 'admin_menu', 'ewlwat_settings_page', 999);
