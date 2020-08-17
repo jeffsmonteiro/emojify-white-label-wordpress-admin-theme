@@ -3,14 +3,32 @@
 * Plugin Name: Emojify White Label Admin Theme
 * Plugin URI: https://jeffmonteiro.gitbook.io/ewlat/
 * Description: Turn your WordPress Admin Interface more clean, friendly and actual using this Free and Open Source WordPress Admin Theme. To get a more fun interface, you can enable this theme to use emojis to replace dashicons! ;)
+* Version: 1.0.0
 * Author: Jeff Monteiro
-* Version: 1.1.0
-* Author URI: https://www.linkedin.com/in/jeffmonteiro 
+* Author URI: https://www.linkedin.com/in/jeff-monteiro 
+* License: GPL-3.0-or-later
+* License URI: https://www.gnu.org/licenses/gpl-3.0.html
 * Text Domain: ewlat
-* Domain Path: /languages/
+* Domain Path: /languages
 *
 * @package ewlat
-* @version 1.1.0
+* @version 1.0.0
+*/
+
+/*
+	Emojify White Label Admin Theme is free software: you can redistribute 
+	it and/or modify it under the terms of the GNU General Public License 
+	as published by the Free Software Foundation, either version 3 of the 
+	License, or any later version.
+	
+	Emojify White Label Admin Theme is distributed in the hope that it will 
+	be useful,but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with Emojify White Label Admin Theme. If not, see 
+	https://www.gnu.org/licenses/gpl-3.0.html.
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -59,10 +77,8 @@ function ewlat_load_options(){
 
 	if ( $emojify ):
 		add_filter( 'admin_body_class', 'ewlat_add_body_class');
-		add_action( 'admin_menu', 'emojify_admin_icons', 999 );
+		add_action( 'admin_menu', 'ewlat_emojify_admin_icons', 999 );
 	endif;
-
-
 
 	if ( $hide_wp ):
 		add_action( 'wp_before_admin_bar_render', 'ewlat_remove_wp', 0 );
@@ -242,11 +258,11 @@ add_action( 'login_head', 'ewlat_login_brand', 100 );
 * Redefine url for logo on login page
 */
 
-function apply_home_url(){
+function ewlat_apply_home_url(){
 	return get_home_url();
 }
 
-add_filter('login_headerurl', 'apply_home_url');
+add_filter('login_headerurl', 'ewlat_apply_home_url');
 
 
 
@@ -298,7 +314,7 @@ function ewlat_clear_dashboard() {
 * Emojify Admin Icons
 */
 
-function emojify_admin_icons() {
+function ewlat_emojify_admin_icons() {
 
 	add_action( 'admin_head', function(){
 

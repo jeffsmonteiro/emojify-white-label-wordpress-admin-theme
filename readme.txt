@@ -1,13 +1,26 @@
-=== Emojify White Label WordPress Admin Theme ===
+=== Emojify White Label Admin Theme ===
 Contributors: Jeff Monteiro
 Tags: white label wordpress admin theme, admin theme, emoji wordpress admin theme
 Requires at least: 4.6
 Tested up to: 5.3.2
-Stable tag: 1.1
+Stable tag: 1.0.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-This plugin is a white label WordPress Admin Theme.
+Emojify White Label Admin Theme is free software: you can redistribute 
+it and/or modify it under the terms of the GNU General Public License 
+as published by the Free Software Foundation, either version 3 of the 
+License, or any later version.
+
+Emojify White Label Admin Theme is distributed in the hope that it will 
+be useful,but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Emojify White Label Admin Theme. If not, see 
+https://www.gnu.org/licenses/gpl-3.0.html.
+
 
 == Description ==
 
@@ -41,5 +54,5 @@ FEATURES
 
 == Changelog ==
 
-= 0.1.0 =
+= 1.0.0 =
 * Initial release.
