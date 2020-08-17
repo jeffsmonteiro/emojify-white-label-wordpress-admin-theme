@@ -1,5 +1,5 @@
 {
-  "name": "ewlwat",
+  "name": "ewlat",
   "version": "0.0.1",
   "description": "Emojify White Label WordPress Admin Theme Admin Theme",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeffsmonteiro/ewlwat"
+    "url": "https://github.com/jeffsmonteiro/ewlat"
   },
   "keywords": [
     "wordpress",
@@ -17,9 +17,9 @@
   "author": "Jeff Monteiro",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jeffsmonteiro/ewlwat/issues"
+    "url": "https://github.com/jeffsmonteiro/ewlat/issues"
   },
-  "homepage": "https://jeffmonteiro.gitbook.io/ewlwat/",
+  "homepage": "https://jeffmonteiro.gitbook.io/ewlat/",
   "dependencies": {
     "browser-sync": "^2.26.7",
     "del": "^3.0.0",

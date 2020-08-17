@@ -53,7 +53,7 @@
       });
     })
       
-    // var ewlwatItem = $(".is-emoji-picker").emojioneArea({
+    // var ewlatItem = $(".is-emoji-picker").emojioneArea({
     //     standalone: true,
     //     autocomplete: false,
     //     useSprite: true,

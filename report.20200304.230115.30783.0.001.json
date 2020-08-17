@@ -8,7 +8,7 @@
     "dumpEventTime": "2020-03-04T23:01:15Z",
     "dumpEventTimeStamp": "1583373675605",
     "processId": 30783,
-    "cwd": "/var/www/wordpress/wp-content/plugins/ewlwat",
+    "cwd": "/var/www/wordpress/wp-content/plugins/ewlat",
     "commandLine": [
       "node",
       "/usr/local/bin/gulp",
@@ -296,7 +296,7 @@
     "QT4_IM_MODULE": "xim",
     "TEXTDOMAINDIR": "/usr/share/locale/",
     "DEFAULTS_PATH": "/usr/share/gconf/ubuntu.default.path",
-    "PWD": "/var/www/wordpress/wp-content/plugins/ewlwat",
+    "PWD": "/var/www/wordpress/wp-content/plugins/ewlat",
     "HOME": "/home/jefferson",
     "TEXTDOMAIN": "im-config",
     "SSH_AGENT_PID": "4494",
@@ -340,7 +340,7 @@
     "LE_WORKING_DIR": "/home/jefferson/.acme.sh",
     "OLDPWD": "/var/www/wordpress",
     "_": "/usr/local/bin/gulp",
-    "INIT_CWD": "/var/www/wordpress/wp-content/plugins/ewlwat"
+    "INIT_CWD": "/var/www/wordpress/wp-content/plugins/ewlat"
   },
   "userLimits": {
     "core_file_size_blocks": {
@@ -393,7 +393,7 @@
     "/lib/x86_64-linux-gnu/libpthread.so.0",
     "/lib/x86_64-linux-gnu/libc.so.6",
     "/lib64/ld-linux-x86-64.so.2",
-    "/var/www/wordpress/wp-content/plugins/ewlwat/node_modules/node-sass/vendor/linux-x64-72/binding.node",
+    "/var/www/wordpress/wp-content/plugins/ewlat/node_modules/node-sass/vendor/linux-x64-72/binding.node",
     "/lib/x86_64-linux-gnu/libnss_files.so.2"
   ]
 }

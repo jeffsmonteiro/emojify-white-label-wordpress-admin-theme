@@ -1,5 +1,22 @@
+.unset-screen-reader-text{
+  border: initial;
+  clip: unset;
+  -webkit-clip-path: unset;
+  clip-path: unset;
+  height: auto;
+  margin: unset;
+  overflow: auto;
+  padding: unset;
+  position: relative;
+  width: auto;
+  word-wrap: normal;
+  display: unset;
+}
+
+
 html{
   min-height: 100%;
+  
   &.wp-toolbar{
     padding-top: 60px;
     @include breakpoint( small ){
@@ -63,17 +80,29 @@ html{
       padding: 0;
     }
   }
-  .folded #wpfooter,
   #wpfooter {
-    margin-left: 201px;
+    margin-left: 230px;
     padding: 20;
     @include breakpoint( large ){
-      margin-left: 61px !important;
+      margin-left: 61px;
       padding: 20;
     }
     @include breakpoint( medium ){
-      margin-left: 0px !important;
-      padding-left: 0px !important;
+      margin-left: 0px;
+      padding-left: 0px;
+      padding: 0;
+    }
+  }
+  .folded #wpfooter{
+    margin-left: 105px;
+    padding: 20;
+    @include breakpoint( large ){
+      margin-left: 105px;
+      padding: 20;
+    }
+    @include breakpoint( medium ){
+      margin-left: 0px;
+      padding-left: 0px;
       padding: 0;
     }
   }
@@ -82,36 +111,13 @@ html{
 #wpbody-content {
 	float: left;
 	width: 100%;
-  #screen-meta{
-    z-index: 10;
-    top: 0px;
-    margin: 0 40px -1px 40px;
-    @include breakpoint( medium ){
-      margin: 0 10px -1px 10px;
-    }
-  }
-  #screen-meta-links{
-    @include breakpoint( medium ){
-      margin-bottom: 0;
-    }
-    > div {
-      z-index: 2;
-      top: 0;
-      right: 20px;
-      @include opacity(0.4);
-      @include transition( opacity .2s ease );
-      
-      &:hover{
-        @include opacity(1);
-      }
-    }
-  }
+  padding: 0;
   .wrap{
     position: relative;
-    background-color: #fff;
+    background-color: #F2F3F5;
     margin: 0;
     .wp-heading-inline, h1{
-      color: $gray;
+      color: $gray-dark;
       font-weight: 600;
       font-size: 2.5em;
     }
@@ -186,7 +192,7 @@ html{
     }
     ul.subsubsub{
       width: 100%;
-      padding: 0 0 4px 0;
+      padding: 0 0 32px 0;
       margin: 0;
       }
     }
@@ -205,15 +211,46 @@ html{
       padding:  0;
     }
   .search-box{
-    width: 100%;
+    width: calc(100% - 20px);
     background-color: #fff;
-    padding: 20px 0;
     display: flex;
     float: inherit;
-    #post-search-input, 
-    #plugin-search-input{
-      width: 100%;
+    border-radius: .5em .5em 0 0;
+    //@include box-shadow(0, 6px, 12px, rgba(0,0,0,.1));
+    margin: 32px 0 0;
+    padding: 30px 10px 20px;
+    position: relative;
+    label.screen-reader-text{
+      border: initial;
+      clip: unset;
+      -webkit-clip-path: unset;
+      clip-path: unset;
+      height: auto;
+      margin: unset;
+      overflow: auto;
+      padding: unset;
+      width: auto;
+      word-wrap: normal;
+      display: unset;
+      position: absolute;
+      top: 8px;
     }
+    input[type='search']{
+      width: 100%;
+      border: none;
+      border-radius: 32px;
+      margin: 0 24px 0 0;
+      background-color: $gray-light;
+      color: $gray-dark;      
+      &:before{
+        content: 'Search';
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+      }
+    }
+    // #post-search-input, 
+    // #plugin-search-input{
+    //   width: 100%;
+    // }
   }
   @include breakpoint(medium){
     .search-box{
@@ -282,10 +319,27 @@ html{
 }
 
 
+.accordion-section-title:hover:after, 
+.handlediv:focus, 
+.handlediv:hover, 
+.item-edit:focus, 
+.item-edit:hover, 
+.postbox .handlediv.button-link:focus, 
+.postbox .handlediv.button-link:hover, 
+.sidebar-name:hover .toggle-indicator, 
+.widget-action:focus, 
+.widget-top:hover .widget-action{
+  outline: none;
+}
+
 
 #ure_page_permissions_link{
   margin-left: 200px !important;
 }
 #ure_list_page_permissions{
   margin-left: 200px !important;
+}
+
+img.avatar{
+  border-radius: 100px;
 }

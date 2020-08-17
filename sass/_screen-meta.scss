@@ -1,0 +1,37 @@
+#screen-meta{
+  z-index: 10;
+  top: 0px;
+  margin: 0 40px -1px 40px;
+  border: none;
+  @include breakpoint( medium ){
+    margin: 0 10px -1px 10px;
+  }
+  .contextual-help-tabs .active a{
+    border: none;
+    &:focus{
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
+#screen-meta-links{
+  @include breakpoint( medium ){
+    margin-bottom: 0;
+  }
+  > div {
+    z-index: 2;
+    top: 0;
+    right: 20px;
+    @include opacity(0.4);
+    @include transition( opacity .2s ease );
+    
+    &:hover{
+      @include opacity(1);
+    }
+  }
+}
+
+#contextual-help-back{
+  border: none;
+}

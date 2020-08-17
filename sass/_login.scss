@@ -3,8 +3,13 @@ body.login{
     form#loginform{
       border: none;
       background-color: #fff;
+      border-radius: 1em;
+      @include box-shadow(0, 6px, 12px, rgba(0,0,0,.1));
       .wp-social-login-widget{
         display: none;
+      }
+      label{
+        color: $gray;
       }
       p.forgetmenot{
         display: block;
@@ -28,11 +33,21 @@ body.login{
         }
       }
     }
-    p#nav{
+    p#nav, p#backtoblog{
       text-align: center;
+      padding: 0;
+      a{
+        background-color: rgba(255,255,255,0.8);
+        padding: 8px;
+        border-radius: 32px;
+        width: calc( 100% - 16px);
+        display: block;
+        @include transition(all .2s ease);
+        &:hover{
+          background-color: rgba(255,255,255,1);
+        }
+      }
     }
-    p#backtoblog{
-      text-align: center;
-    }
+    
   }
 }

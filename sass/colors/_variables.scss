@@ -8,9 +8,9 @@ $blue : #00a2ff;
 $primary-hover: $blue;
 $primary: rgba($blue, 0.8);
 
-$gray-light: #f3f4f5;
-$gray: #555d66;
-$gray-dark: #191e23;
+$gray-light: #edf0f5;
+$gray: #8b9ab7;
+$gray-dark: #6a7c9e;
 
 $petro: #252b33;
 
@@ -22,16 +22,19 @@ $overlay: $gray-light;
 
 $border-color: #eaeaea;
 $border: 1px solid $border-color;
+$border-radius: .5em;
 
+$hover-color: #f3f4f5;
 
 $text-color-hover: $gray-dark;
-$text-color: $gray !default;
+$text-color: $gray-dark !default;
 $text-color-highlight: #fff;
 $base-color: #fff !default;
 
 $icon-color: hsl( hue( $base-color ), 7%, 95% ) !default;
 $highlight-color: $yellow !default;
 $notification-color: #ff5252 !default;
+
 
 $btn-normal: $primary;
 $btn-hover: $primary-hover;

@@ -11,7 +11,7 @@ This plugin is a white label WordPress Admin Theme.
 
 == Description ==
 
-ewlwat is a super lightweight, White Label Admin Theme inspired in the Gutenberg Plugin interface. With a clean design proposal, this plugin tries to modernize the wordpress admin interface in addition to allowing you to use your own brand, both within admin and login pages.
+ewlat is a super lightweight, White Label Admin Theme inspired in the Gutenberg Plugin interface. With a clean design proposal, this plugin tries to modernize the wordpress admin interface in addition to allowing you to use your own brand, both within admin and login pages.
 
 Finally, it is also possible to make the admin interface a little more fun by activating the emojify function, which replaces the icons in the side menu with emojis.
 
@@ -31,7 +31,7 @@ FEATURES
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/ewlwat` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/ewlat` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Use the Settings->Emojify Admin Theme screen to configure the plugin
 

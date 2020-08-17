@@ -3,20 +3,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function ewlwat_settings_page() {
+function ewlat_settings_page() {
 
   if ( current_user_can('manage_options') ) {
     
     // Create Config Array
 
     $config_array             = array();
-    $config_array['prefix']   = 'ewlwat_';
+    $config_array['prefix']   = 'ewlat_';
     $config_array['tabs']     = true;
     $config_array['menu']     = array(
-      'page_title'            => __( 'Emojify WLWAT', 'ewlwat' ),
-      'menu_title'            => __( 'Emojify Admin Theme', 'ewlwat' ),
+      'page_title'            => __( 'Emojify WLAT', 'ewlat' ),
+      'menu_title'            => __( 'Emojify Admin Theme', 'ewlat' ),
       'capability'            => 'manage_options',
-      'slug'                  => 'ewlwat',
+      'slug'                  => 'ewlat',
       'icon'                  => 'dashicons-performance',
     //'position'              => 10,
       'submenu'               => true,
@@ -27,18 +27,18 @@ function ewlwat_settings_page() {
     
       array(
         'id'    => 'general_section',
-        'title' => __( 'General Settings', 'ewlwat' ),
+        'title' => __( 'General Settings', 'ewlat' ),
         'desc'  => '',
       ),
       array(
         'id'    => 'emojify_section',
-        'title' => __( 'Emojify Settings', 'ewlwat' ),
+        'title' => __( 'Emojify Settings', 'ewlat' ),
         'desc'  => '',
       ),
       array(
         'id'    => 'help_section',
-        'title' => __( 'Help', 'ewlwat' ),
-        'desc'  => __( '', 'ewlwat' )
+        'title' => __( 'Help', 'ewlat' ),
+        'desc'  => __( '', 'ewlat' )
       )
     );
 
@@ -48,41 +48,41 @@ function ewlwat_settings_page() {
        
         array(
           'id'    => 'hide_wp_logo',
-          'label' => __( 'Hide WP Logo', 'ewlwat' ),
-          'desc'  => __( 'Do you want to hide WordPress icon on admin bar?', 'ewlwat' ),
+          'label' => __( 'Hide WP Logo', 'ewlat' ),
+          'desc'  => __( 'Do you want to hide WordPress icon on admin bar?', 'ewlat' ),
           'type'  => 'checkbox',
         ),
 
         array(
           'id'    => 'clean_dashboard',
-          'label' => __( 'Clean Dashboard', 'ewlwat' ),
-          'desc'  => __( 'Removes non-functional widgets (WP Events and News, At Glance, etc)', 'ewlwat' ),
+          'label' => __( 'Clean Dashboard', 'ewlat' ),
+          'desc'  => __( 'Removes non-functional widgets (WP Events and News, At Glance, etc)', 'ewlat' ),
           'type'  => 'checkbox',
         ),
 
         array(
           'id'          => 'footer_text',
-          'label'       => __( 'Footer Text', 'ewlwat' ),
-          'desc'        => __( 'If you want to replace WordPress text in footer of admin, you can do that using this field.', 'ewlwat' ),
-          'placeholder' => __( 'HTML is unaccepted', 'ewlwat' ),
+          'label'       => __( 'Footer Text', 'ewlat' ),
+          'desc'        => __( 'If you want to replace WordPress text in footer of admin, you can do that using this field.', 'ewlat' ),
+          'placeholder' => __( 'HTML is unaccepted', 'ewlat' ),
           'type'        => 'text'
         ),
 
         array(
           'id'    => 'hide_wp_version',
-          'label' => __( 'Hide WP Version', 'ewlwat' ),
-          'desc'  => __( 'Check to hide text version on footer', 'ewlwat' ),
+          'label' => __( 'Hide WP Version', 'ewlat' ),
+          'desc'  => __( 'Check to hide text version on footer', 'ewlat' ),
           'type'  => 'checkbox',
         ),
 
         array(
           'id'      => 'brand_header',
-          'label'   => __( 'Top Menu Logo', 'ewlwat' ),
-          'desc'    => __( 'Add your own logo in top menu. The max width is 160 and max height is 44px.', 'ewlwat' ),
+          'label'   => __( 'Top Menu Logo', 'ewlat' ),
+          'desc'    => __( 'Add your own logo in top menu. The max width is 160 and max height is 44px.', 'ewlat' ),
           'default' => '',
           'type'    => 'media',
           'options' => array(
-            //'btn'     => __( 'Get the image', 'ewlwat' ),
+            //'btn'     => __( 'Get the image', 'ewlat' ),
             'max_width' => 160,
             'width'   => 160,
             'height'  => 44,
@@ -92,12 +92,12 @@ function ewlwat_settings_page() {
 
         array(
           'id'      => 'brand_gutenberg',
-          'label'   => __( 'Replace WP logo on Gutenberg', 'ewlwat' ),
-          'desc'    => __( 'Add your own logo on post edit pages. The image must have 36x36 pixels. Use of png with transparent background is recommended', 'ewlwat' ),
+          'label'   => __( 'Replace WP logo on Gutenberg', 'ewlat' ),
+          'desc'    => __( 'Add your own logo on post edit pages. The image must have 36x36 pixels. Use of png with transparent background is recommended', 'ewlat' ),
           'default' => '',
           'type'    => 'media',
           'options' => array(
-            //'btn'     => __( 'Get the image', 'ewlwat' ),
+            //'btn'     => __( 'Get the image', 'ewlat' ),
             'max_width' => 36,
             'width'   => 36,
             'height'  => 36,
@@ -107,12 +107,12 @@ function ewlwat_settings_page() {
 
         array(
           'id'      => 'brand_favicon',
-          'label'   => __( 'Admin Favicon', 'ewlwat' ),
-          'desc'    => __( 'Add your own logo in browser tab. The size needs to be 16x16 pixels.', 'ewlwat' ),
+          'label'   => __( 'Admin Favicon', 'ewlat' ),
+          'desc'    => __( 'Add your own logo in browser tab. The size needs to be 16x16 pixels.', 'ewlat' ),
           'default' => '',
           'type'    => 'media',
           'options' => array(
-            //'btn'     => __( 'Get the image', 'ewlwat' ),
+            //'btn'     => __( 'Get the image', 'ewlat' ),
             'max_width' => 16,
             'width'   => 16,
             'height'  => 16
@@ -121,12 +121,12 @@ function ewlwat_settings_page() {
 
         array(
           'id'      => 'brand_login',
-          'label'   => __( 'Login Brand', 'ewlwat' ),
-          'desc'    => __( 'Add your own logo in login page. The max height is 80px and max width is 270px.', 'ewlwat' ),
+          'label'   => __( 'Login Brand', 'ewlat' ),
+          'desc'    => __( 'Add your own logo in login page. The max height is 80px and max width is 270px.', 'ewlat' ),
           'default' => '',
           'type'    => 'media',
           'options' => array(
-            //'btn'     => __( 'Get the image', 'ewlwat' ),
+            //'btn'     => __( 'Get the image', 'ewlat' ),
             'max_width' => 270,
             'width'   => 270,
             'height'  => 80
@@ -135,8 +135,8 @@ function ewlwat_settings_page() {
 
         array(
           'id'      => 'color_login',
-          'label'   => __( 'Login Page Background', 'ewlwat' ),
-          'desc'    => __( 'Changes the background color of the login page', 'ewlwat' ),
+          'label'   => __( 'Login Page Background', 'ewlat' ),
+          'desc'    => __( 'Changes the background color of the login page', 'ewlat' ),
           'default' => '#fff',
           'type'    => 'color',
         ),
@@ -147,8 +147,8 @@ function ewlwat_settings_page() {
         
         array(
           'id'    => 'emojify',
-          'label' => __( 'Emojify Menu', 'ewlwat' ),
-          'desc'  => __( 'Check if you want to replace icons of the admin side menu by emojis 😁', 'ewlwat' ),
+          'label' => __( 'Emojify Menu', 'ewlat' ),
+          'desc'  => __( 'Check if you want to replace icons of the admin side menu by emojis 😁', 'ewlat' ),
           'type'  => 'checkbox',
         ),
         
@@ -160,44 +160,44 @@ function ewlwat_settings_page() {
       'help_section' => array(
         array(
           'id'    => 'question_1',
-          'label' => __( "Emojify not working", "ewlwat" ),
-          'desc'  => __( "<p>To enable emojify you need to check the option on Emojify Settings tab. if the emojis still don't appear, contact the support .</p> ", "ewlwat" ),
+          'label' => __( "Emojify not working", "ewlat" ),
+          'desc'  => __( "<p>To enable emojify you need to check the option on Emojify Settings tab. if the emojis still don't appear, contact the support .</p> ", "ewlat" ),
           'type'  => 'html'
         ),
         array(
           'id'    => 'question_2',
-          'label' => __( "Where do I customize emojis?", "ewlwat" ),
-          'desc'  => __( "<p>You can customize all menu items with emojis on Emojify Settings tab. Sometimes it can take a while to load the emojis, but not more than 30 seconds.</p> ", "ewlwat" ),
+          'label' => __( "Where do I customize emojis?", "ewlat" ),
+          'desc'  => __( "<p>You can customize all menu items with emojis on Emojify Settings tab. Sometimes it can take a while to load the emojis, but not more than 30 seconds.</p> ", "ewlat" ),
           'type'  => 'html'
         ),
         array(
           'id'    => 'question_3',
-          'label' => __( "Can I use custom icons and emojis?", "ewlwat" ),
-          'desc'  => __( "<p>No. Once emojis are enabled, the plugin will attempt to replace all menu icons.</p> ", "ewlwat" ),
+          'label' => __( "Can I use custom icons and emojis?", "ewlat" ),
+          'desc'  => __( "<p>No. Once emojis are enabled, the plugin will attempt to replace all menu icons.</p> ", "ewlat" ),
           'type'  => 'html'
         ),
         array(
           'id'    => 'question_4',
-          'label' => __( "I can't replace some emojis", "ewlwat" ),
-          'desc'  => __( "<p>Some plugins have bugs in the menu register. To prevent you from running out of icons, we've added some directly to the code. When the plugins make corrections to your codes, you will automatically be able to change the emoji.</p> ", "ewlwat" ),
+          'label' => __( "I can't replace some emojis", "ewlat" ),
+          'desc'  => __( "<p>Some plugins have bugs in the menu register. To prevent you from running out of icons, we've added some directly to the code. When the plugins make corrections to your codes, you will automatically be able to change the emoji.</p> ", "ewlat" ),
           'type'  => 'html'
         ),
         array(
           'id'    => 'question_5',
-          'label' => __( "No emoji I set is changed in the menu", "ewlwat" ),
-          'desc'  => __( "<p>In that case, the problem is in your database. It must be configured to the recommended standard for WordPress, in this case utf8-unicode. Otherwise nothing will work!</p> ", "ewlwat" ),
+          'label' => __( "No emoji I set is changed in the menu", "ewlat" ),
+          'desc'  => __( "<p>In that case, the problem is in your database. It must be configured to the recommended standard for WordPress, in this case utf8-unicode. Otherwise nothing will work!</p> ", "ewlat" ),
           'type'  => 'html'
         ),
         array(
           'id'    => 'question_6',
-          'label' => __( "Some emojis don't appear in the menu", "ewlwat" ),
-          'desc'  => __( "<p>Try to open the Emojify Settings tab and set the emoji for the item that is not appearing and save the settings. If the emoji still does not appear, contact support.</p> ", "ewlwat" ),
+          'label' => __( "Some emojis don't appear in the menu", "ewlat" ),
+          'desc'  => __( "<p>Try to open the Emojify Settings tab and set the emoji for the item that is not appearing and save the settings. If the emoji still does not appear, contact support.</p> ", "ewlat" ),
           'type'  => 'html'
         ),
         array(
           'id'    => 'question_7',
-          'label' => __( "How do I contact the support", "ewlwat" ),
-          'desc'  => __( "<p>You can open a ticket on <a href='https://envato.com/' target='_blank'>Envato Market</a></p> ", "ewlwat" ),
+          'label' => __( "How do I contact the support", "ewlat" ),
+          'desc'  => __( "<p>You can open a ticket on <a href='https://envato.com/' target='_blank'>Envato Market</a></p> ", "ewlat" ),
           'type'  => 'html'
         ),
       )
@@ -208,7 +208,7 @@ function ewlwat_settings_page() {
       'action_links'    => array(
         array(
           'type' => 'default',
-          'text' => __( 'Settings', 'ewlwat' ),
+          'text' => __( 'Settings', 'ewlat' ),
         ),
       ),
     );
@@ -233,4 +233,4 @@ function ewlwat_settings_page() {
   }
 }
 
-add_action( 'admin_menu', 'ewlwat_settings_page', 999);
+add_action( 'admin_menu', 'ewlat_settings_page', 999);

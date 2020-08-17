@@ -1,10 +1,10 @@
-
 @import 'variables';
 @import 'mixins';
 
 
 body {
 	background: $body-background;
+	color: $gray-dark !important;
 }
 
 
