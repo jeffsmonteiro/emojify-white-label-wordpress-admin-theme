@@ -4,9 +4,18 @@
 
 body {
 	background: $body-background;
-	color: $gray-dark !important;
+	color: $gray-dark;
 }
 
+p.description{
+	color: $gray;
+	font-style: italic;
+	font-size: $small !important;
+}
+
+.form-table th, .form-wrap label{
+	color: $gray-dark;
+}
 
 /* Links */
 

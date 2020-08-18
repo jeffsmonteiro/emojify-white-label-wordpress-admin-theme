@@ -437,7 +437,7 @@ ul#adminmenu > li.current > a.current:after {
 			margin: 0;
 			text-align: center;
 			&:before{
-				color: $svg-color;
+				color: $gray;
 			}
 			&.svg{
 				background-repeat: no-repeat;
@@ -546,6 +546,23 @@ ul#adminmenu > li.current > a.current:after {
 					border: 0 none;
 					border-radius: 50px;
 				}
+				a{
+					.dashicons-before{
+						width: 44px;
+						height: 44px;
+						left: -2px;
+						position: absolute;
+						z-index: 25;
+						&:before{
+							font-size: 1.7em;
+							line-height: 1.2em;
+							color: $gray;
+							@include breakpoint(large){
+								line-height: 1em;
+							}
+						}
+					}
+				}
 			}
 			a{
 				&.wp-has-current-submenu{
@@ -628,7 +645,7 @@ ul#adminmenu > li.current > a.current:after {
 					z-index: 25;
 					&:before{
 						font-size: 1.7em;
-    				line-height: 1em;
+    				line-height: 1.2em;
 					}
 				}
 			}
@@ -727,7 +744,7 @@ ul#adminmenu > li.current > a.current:after {
 	position: relative;
 	overflow: visible;
 	background: none;
-	color: #aaa;
+	color: $gray;
 	cursor: pointer;
 	&:hover{
 		color: #00b9eb;
