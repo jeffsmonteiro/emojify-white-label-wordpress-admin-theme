@@ -1,0 +1,9 @@
+.block-editor-page{
+  .block-editor{
+    .interface-interface-skeleton{
+      @include breakpoint(medium){
+        top: 61px;
+      }
+    }
+  }
+}

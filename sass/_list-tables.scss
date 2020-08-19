@@ -15,10 +15,29 @@
     border-radius: 0 0 .5em .5em;
     padding: 0px;
     margin-bottom: 32px;
+    @include breakpoint(small){
+      border-radius: .5em;
+    }
   }
   &.bottom{
     margin-top: 32px;
     padding: 16px 10px;
+    @include breakpoint(medium){
+      margin-bottom: 64px;
+    }
+    .tablenav-pages{
+      @include breakpoint(medium){
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .displaying-num{
+          position: relative;
+          top: unset;
+          margin-bottom: 0.5em;
+        }
+      }
+    }
   }
   .actions{
     margin: 8px;

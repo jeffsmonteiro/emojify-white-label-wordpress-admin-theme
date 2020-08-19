@@ -3,17 +3,6 @@ body.users-php{
     #wpbody-content{
       .wrap{
         form{
-          .search-box{
-            @include breakpoint( 'minmedium' ){
-              width: 100%;
-              padding: 20px 0;
-              display: flex;
-              #user-search-input{
-                width: 100%;
-              }
-            }
-            
-          }
           table{
             .column-username{
               img{

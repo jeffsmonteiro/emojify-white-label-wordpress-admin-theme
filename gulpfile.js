@@ -50,7 +50,7 @@ gulp.task( 'watch', function() {
 // gulp cssnano
 // Minifies CSS files
 gulp.task( 'cssnano', function() {
-  return gulp.src( paths.css + '/ewlat.css' )
+  return gulp.src( paths.css + '/catforwp.css' )
     .pipe( sourcemaps.init( { loadMaps: true } ) )
     .pipe( plumber( {
             errorHandler: function( err ) {
@@ -65,7 +65,7 @@ gulp.task( 'cssnano', function() {
 });
 
 gulp.task( 'minifycss', function() {
-  return gulp.src( paths.css + '/ewlat.css' )
+  return gulp.src( paths.css + '/catforwp.css' )
   .pipe( sourcemaps.init( { loadMaps: true } ) )
     .pipe( cleanCSS( { compatibility: '*' } ) )
     .pipe( plumber( {
@@ -81,7 +81,7 @@ gulp.task( 'minifycss', function() {
 
 gulp.task( 'cleancss', function() {
   return gulp.src( paths.css + '/*.min.css', { read: false } ) // Much faster
-    .pipe( ignore( 'ewlat.css' ) )
+    .pipe( ignore( 'catforwp.css' ) )
     .pipe( rimraf() );
 });
 

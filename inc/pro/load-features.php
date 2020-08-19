@@ -1,94 +1,45 @@
 <?php
 /**
-* Plugin Name: Emojify White Label Admin Theme
-* Plugin URI: https://jeffmonteiro.gitbook.io/ewlat/
-* Description: Turn your WordPress Admin Interface more clean, friendly and actual using this Free and Open Source WordPress Admin Theme. To get a more fun interface, you can enable this theme to use emojis to replace dashicons! ;)
+* Cool Admin Theme Lite for WordPress
 * Version: 1.0.0
-* Author: Jeff Monteiro
-* Author URI: https://www.linkedin.com/in/jeff-monteiro 
 * License: GPL-3.0-or-later
-* License URI: https://www.gnu.org/licenses/gpl-3.0.html
-* Text Domain: ewlat
-* Domain Path: /languages
 *
-* @package ewlat
+* @package catforwp
 * @version 1.0.0
-*/
-
-/*
-	Emojify White Label Admin Theme is free software: you can redistribute 
-	it and/or modify it under the terms of the GNU General Public License 
-	as published by the Free Software Foundation, either version 3 of the 
-	License, or any later version.
-	
-	Emojify White Label Admin Theme is distributed in the hope that it will 
-	be useful,but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-	GNU General Public License for more details.
-	
-	You should have received a copy of the GNU General Public License
-	along with Emojify White Label Admin Theme. If not, see 
-	https://www.gnu.org/licenses/gpl-3.0.html.
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// options framework
-
-require_once( plugin_dir_path(__FILE__) . 'inc/class-boo-settings-helper.php');
-require_once( plugin_dir_path(__FILE__) . 'inc/plugin-settings.php');
-
-
-/**
-* Set default color scheme
-*/
-
-
-add_action( 'admin_init', function() {
-
-	// remove the color scheme picker
-	remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
-
-	// force all users to use the "Ectoplasm" color scheme
-	add_filter( 'get_user_option_admin_color', function() {
-		return 'fresh';
-	});
-
-});
-
-
-
-
 /**
 * Applying options to Admin Theme
 */
 
-function ewlat_load_options(){
+function catforwp_load_options(){
 
 	$options 			= wp_load_alloptions();
 
-	$emojify 			= isset($options['ewlat_emojify']) ? $options['ewlat_emojify'] : 0 ;
-	$hide_wp 			= isset($options['ewlat_hide_wp_logo']) ? $options['ewlat_hide_wp_logo'] : 0;
-	$clean_dash   = isset($options['ewlat_clean_dashboard']) ? $options['ewlat_clean_dashboard'] : 0;
+	$emojify 			= isset($options['catforwp_emojify']) ? $options['catforwp_emojify'] : 0 ;
+	$hide_wp 			= isset($options['catforwp_hide_wp_logo']) ? $options['catforwp_hide_wp_logo'] : 0;
+	$clean_dash   = isset($options['catforwp_clean_dashboard']) ? $options['catforwp_clean_dashboard'] : 0;
 
 	// Add emojify class to body
 
 	if ( $emojify ):
-		add_filter( 'admin_body_class', 'ewlat_add_body_class');
-		add_action( 'admin_menu', 'ewlat_emojify_admin_icons', 999 );
+		add_filter( 'admin_body_class', 'catforwp_add_body_class');
+		add_action( 'admin_menu', 'catforwp_emojify_admin_icons', 999 );
 	endif;
 
 	if ( $hide_wp ):
-		add_action( 'wp_before_admin_bar_render', 'ewlat_remove_wp', 0 );
+		add_action( 'wp_before_admin_bar_render', 'catforwp_remove_wp', 0 );
 	endif;
 
 	if ( $clean_dash ):
-		add_action('wp_dashboard_setup', 'ewlat_clear_dashboard' );
+		add_action('wp_dashboard_setup', 'catforwp_clear_dashboard' );
 	endif;
 }
-add_filter('init', 'ewlat_load_options');
+add_filter('init', 'catforwp_load_options');
 
 
 
@@ -96,11 +47,11 @@ add_filter('init', 'ewlat_load_options');
 
 
 /**
-* Adding ewlat class to body
+* Adding catforwp class to body
 */
 
-function ewlat_add_body_class(){
-	return 'ewlat-emojify';
+function catforwp_add_body_class(){
+	return 'catforwp-emojify';
 }
 
 
@@ -111,7 +62,7 @@ function ewlat_add_body_class(){
 * Hide WP logo from admin bar
 */
 
-function ewlat_remove_wp() {
+function catforwp_remove_wp() {
 	global $wp_admin_bar;
 	$wp_admin_bar->remove_node( 'wp-logo' );
 }
@@ -130,14 +81,14 @@ function ewlat_remove_wp() {
 * Add Custom Logo to Admin Bar
 */
 
-function ewlat_custom_brand_admin() {
+function catforwp_custom_brand_admin() {
 	
 	$options 			= wp_load_alloptions();
 	
-	$brand_header = isset($options['ewlat_brand_header']) ? $options['ewlat_brand_header'] : 0;
-	$brand_icon 	= isset($options['ewlat_brand_favicon']) ? $options['ewlat_brand_favicon'] : '';
-	$gutenberg 		= isset($options['ewlat_brand_gutenberg']) ? $options['ewlat_brand_gutenberg'] : 0;
-	$hide_version = isset($options['ewlat_hide_wp_version']) ? $options['ewlat_hide_wp_version'] : 0;
+	$brand_header = isset($options['catforwp_brand_header']) ? $options['catforwp_brand_header'] : 0;
+	$brand_icon 	= isset($options['catforwp_brand_favicon']) ? $options['catforwp_brand_favicon'] : '';
+	$gutenberg 		= isset($options['catforwp_brand_gutenberg']) ? $options['catforwp_brand_gutenberg'] : 0;
+	$hide_version = isset($options['catforwp_hide_wp_version']) ? $options['catforwp_hide_wp_version'] : 0;
 
 	$head 				= '';
 	$style 				= '<style type="text/css">';
@@ -205,7 +156,7 @@ function ewlat_custom_brand_admin() {
 
 	echo $head;
 }
-add_action( 'admin_head', 'ewlat_custom_brand_admin', 0 );
+add_action( 'admin_head', 'catforwp_custom_brand_admin', 0 );
 
 
 
@@ -215,10 +166,10 @@ add_action( 'admin_head', 'ewlat_custom_brand_admin', 0 );
 */
 
 
-function ewlat_login_brand() {
+function catforwp_login_brand() {
 	
-	$brand = null !== get_option('ewlat_brand_login') ? get_option('ewlat_brand_login') : 0;
-	$color = null !== get_option('ewlat_color_login') ? get_option('ewlat_color_login') : 0;
+	$brand = null !== get_option('catforwp_brand_login') ? get_option('catforwp_brand_login') : 0;
+	$color = null !== get_option('catforwp_color_login') ? get_option('catforwp_color_login') : 0;
 	
 	$style = '<style type="text/css">';
 
@@ -249,7 +200,7 @@ function ewlat_login_brand() {
 	$style .= '</style>';
 	echo $style;
 }
-add_action( 'login_head', 'ewlat_login_brand', 100 );
+add_action( 'login_head', 'catforwp_login_brand', 100 );
 
 
 
@@ -258,11 +209,11 @@ add_action( 'login_head', 'ewlat_login_brand', 100 );
 * Redefine url for logo on login page
 */
 
-function ewlat_apply_home_url(){
+function catforwp_apply_home_url(){
 	return get_home_url();
 }
 
-add_filter('login_headerurl', 'ewlat_apply_home_url');
+add_filter('login_headerurl', 'catforwp_apply_home_url');
 
 
 
@@ -272,10 +223,10 @@ add_filter('login_headerurl', 'ewlat_apply_home_url');
 * Replace text on footer
 */
 
-function ewlat_footer_text(){
+function catforwp_footer_text(){
 
 	$options	= wp_load_alloptions();
-	$footer 	= isset( $options['ewlat_footer_text']) && $options['ewlat_footer_text'] != '' ? trim($options['ewlat_footer_text']) : '';
+	$footer 	= isset( $options['catforwp_footer_text']) && $options['catforwp_footer_text'] != '' ? trim($options['catforwp_footer_text']) : '';
 	$footer 	= isset( $footer ) && $footer != ''  ? $footer : '';
 	
 	if( $footer != ''):
@@ -285,7 +236,7 @@ function ewlat_footer_text(){
 	endif;
 }
 
-add_filter( 'admin_footer_text', 'ewlat_footer_text' );
+add_filter( 'admin_footer_text', 'catforwp_footer_text' );
 
 
 
@@ -295,7 +246,7 @@ add_filter( 'admin_footer_text', 'ewlat_footer_text' );
 */
 
 
-function ewlat_clear_dashboard() {
+function catforwp_clear_dashboard() {
 
 	global $wp_meta_boxes;
 
@@ -314,7 +265,7 @@ function ewlat_clear_dashboard() {
 * Emojify Admin Icons
 */
 
-function ewlat_emojify_admin_icons() {
+function catforwp_emojify_admin_icons() {
 
 	add_action( 'admin_head', function(){
 
@@ -325,7 +276,7 @@ function ewlat_emojify_admin_icons() {
 			
 			if( count( $item ) == 7 ){
 				
-				$emoji = get_option( 'ewlat_emojify_'.$item[5] );
+				$emoji = get_option( 'catforwp_emojify_'.$item[5] );
 
 				if( $emoji ){
 					
@@ -348,39 +299,39 @@ function ewlat_emojify_admin_icons() {
 * Enqueue Admin Theme Scripts
 */
 
-function ewlat_content_styles() {
+function catforwp_content_styles() {
 	
 	wp_enqueue_script(
-		'ewlat-script',
-		plugin_dir_url(__FILE__) . 'js/ewlat.js',
+		'catforwp-script',
+		plugin_dir_url(__FILE__) . '../../js/catforwp.js',
 		array('emojionearea-script'),
 		'1.1'
 	);
 
 	wp_enqueue_style(
-		'ewlat-style',
-		plugin_dir_url(__FILE__) . 'css/ewlat.min.css'
+		'catforwp-style',
+		plugin_dir_url(__FILE__) . '../../css/catforwp.min.css'
 	);
 
 	wp_enqueue_script(
 		'emojione-script',
-		plugin_dir_url(__FILE__) . 'js/vendor/emojione.min.js',
+		plugin_dir_url(__FILE__) . '../../js/vendor/emojione.min.js',
 		array('jquery'),
 		'4.5'
 	);
 
 	wp_enqueue_script(
 		'emojionearea-script',
-		plugin_dir_url(__FILE__) . 'js/vendor/emojionearea.min.js',
+		plugin_dir_url(__FILE__) . '../../js/vendor/emojionearea.min.js',
 		array('emojione-script'),
 		'3.4.1'
 	);
 
 	wp_enqueue_style(
 		'emojionarea-style',
-		plugin_dir_url(__FILE__) . 'css/vendor/emojionearea.css'
+		plugin_dir_url(__FILE__) . '../../css/vendor/emojionearea.css'
 	);
 }
 
-add_action( 'admin_enqueue_scripts', 'ewlat_content_styles' );
-add_action( 'login_enqueue_scripts', 'ewlat_content_styles' );
+add_action( 'admin_enqueue_scripts', 'catforwp_content_styles' );
+add_action( 'login_enqueue_scripts', 'catforwp_content_styles' );

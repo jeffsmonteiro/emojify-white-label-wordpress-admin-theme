@@ -1,14 +1,14 @@
 {
-  "name": "ewlat",
+  "name": "catforwp",
   "version": "0.0.1",
-  "description": "Emojify White Label WordPress Admin Theme Admin Theme",
+  "description": "Cool Admin Theme for WordPress",
   "main": "index.js",
   "engines": {
     "npm": ">=2.1.8"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeffsmonteiro/ewlat"
+    "url": "https://github.com/jeffsmonteiro/catforwp"
   },
   "keywords": [
     "wordpress",
@@ -17,9 +17,9 @@
   "author": "Jeff Monteiro",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jeffsmonteiro/ewlat/issues"
+    "url": "https://github.com/jeffsmonteiro/catforwp/issues"
   },
-  "homepage": "https://jeffmonteiro.gitbook.io/ewlat/",
+  "homepage": "https://jeffmonteiro.gitbook.io/catforwp/",
   "dependencies": {
     "browser-sync": "^2.26.7",
     "del": "^3.0.0",
