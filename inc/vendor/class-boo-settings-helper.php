@@ -689,7 +689,8 @@ if ( ! class_exists( 'Boo_Settings_Helper' ) ):
 		}
 
 		function sanitize_textarea( $value ) {
-			return sanitize_textarea_field( $value );
+			//return sanitize_textarea_field( $value );
+			return wp_kses_stripslashes($value);
 		}
 
 		function sanitize_checkbox( $value ) {

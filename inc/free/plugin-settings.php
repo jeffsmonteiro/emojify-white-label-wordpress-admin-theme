@@ -52,6 +52,35 @@ function catforwp_settings_page() {
           'label'       => esc_html__( 'Custom CSS', 'catforwp' ),
           'desc'        => esc_html__( 'Add new emojis using custom CSS code.', 'catforwp' ),
           'type'        => 'textarea',
+          'default'     => 
+".catforwp-emojify #menu-dashboard > a::before{
+  content: '📺';
+}"
+        ),
+        array(
+          'id'    => 'bepro',
+          'label' => esc_html__( 'Be a PRO!', 'catforwp' ),
+          'type'  => 'html',
+          'desc'  => sprintf(esc_html__( '%1$s', 'catforwp' ),'
+            <div class="bepro">
+              <h3>🚨 Get a White Label Admin with the Pro</h3>
+              <ul>
+                <li>- Hide the WordPress brand in the navigation bar</li>
+                <li>- Use your own brand on the top bar</li>
+                <li>- Replace the WordPress brand with your own brand on the login page</li>
+                <li>- Change the brand link on the login page to your homepage</li>
+                <li>- Change the background color of the login page</li>
+                <li>- Replace the WordPress brand with your brand in the edit block (Gutenberg)</li>
+                <li>- Add a custom favicon to the Admin Area</li>
+                <li>- Choose emojis for all sidebar menus using a picker</li>
+                <li>- Hide or replace WordPress text at the bottom of the Admin Area</li>
+                <li>- Hide the WordPress version text at the bottom of the Admin Area</li>
+                <li>- Remove non functional widgets from dashboard</li>
+                <li><strong>- And more ... </strong></li>
+              </ul>
+              <h3>👉 Check it out at <a href="https://wpadmintheme.com" target="_blank">wpadmintheme.com</a></h3>
+            </div>
+          ')
         ),
         
         // this section is generated dinamically
@@ -63,37 +92,31 @@ function catforwp_settings_page() {
         array(
           'id'    => 'question_1',
           'label' => esc_html__( "Emojify not working", "catforwp" ),
-          'desc'  => esc_html__( "To enable emojify you need to check the option on Emojify Settings tab.", "catforwp" ),
+          'desc'  => esc_html__( "To enable emojify you need to check the option on Emojify Settings tab. If Emojify is already enabled, can be your OS don't have emoji characteres installed.", "catforwp" ),
           'type'  => 'html'
         ),
         array(
           'id'    => 'question_2',
           'label' => esc_html__( "Where do I customize emojis?", "catforwp" ),
-          'desc'  => esc_html__( "You can customize all menu items with emojis on Emojify Settings tab. Sometimes it can take a while to load the emojis, but not more than 30 seconds.", "catforwp" ),
+          'desc'  => esc_html__( "On free version you have a default set of emojis, but only for 60 items (the most popular). If you want to customize these items or add new items (when you get new plugins not coverted by our default sytlesheet), you can use the Custom CSS field to do it.", "catforwp" ),
           'type'  => 'html'
         ),
         array(
           'id'    => 'question_3',
           'label' => esc_html__( "Can I use custom icons and emojis?", "catforwp" ),
-          'desc'  => esc_html__( "No. Once emojis are enabled, the plugin will attempt to replace all menu icons.", "catforwp" ),
+          'desc'  => esc_html__( "Maybe. After activation of the Emojify feature, all icons are replaced by emojis. May you can use the Custom CSS field to make changes. If you know a little bit of CSS you will do it.", "catforwp" ),
           'type'  => 'html'
         ),
         array(
           'id'    => 'question_4',
-          'label' => esc_html__( "I can't replace some emojis", "catforwp" ),
-          'desc'  => esc_html__( "Some plugins have bugs in the menu register. To prevent you from running out of icons, we've added some directly to the code. When the plugins make corrections to your codes, you will automatically be able to change the emoji.", "catforwp" ),
-          'type'  => 'html'
-        ),
-        array(
-          'id'    => 'question_5',
-          'label' => esc_html__( "No emoji I set is changed in the menu", "catforwp" ),
-          'desc'  => esc_html__( "In that case, the problem is in your database. It must be configured to the recommended standard for WordPress, in this case utf8-unicode. Otherwise nothing will work!", "catforwp" ),
+          'label' => esc_html__( "Emojis that I set in the Custom CSS are not displayed", "catforwp" ),
+          'desc'  => esc_html__( "Try to clear browser cache and refresh the page. If you are using some cache plugin like Total Cache, try to refresh the cache.", "catforwp" ),
           'type'  => 'html'
         ),
         array(
           'id'    => 'question_6',
           'label' => esc_html__( "Some emojis don't appear in the menu", "catforwp" ),
-          'desc'  => esc_html__( "Try to open the Emojify Settings tab and set the emoji for the item that is not appearing and save the settings. If the emoji still does not appear, contact support.", "catforwp" ),
+          'desc'  => esc_html__( "Our plugin cover the 60 most populars in WordPress Plugin Repository, maybe the plugin that you are using are not covered. So, try to add the emoji using the Custom CSS field.", "catforwp" ),
           'type'  => 'html'
         ),
         array(

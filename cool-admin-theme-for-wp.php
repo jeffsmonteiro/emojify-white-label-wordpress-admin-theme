@@ -57,10 +57,10 @@ require_once( plugin_dir_path(__FILE__) . 'inc/vendor/class-boo-settings-helper.
 
 
 // PRO FEATURES
-// require_once( plugin_dir_path(__FILE__) . 'inc/pro/plugin-settings.php');
-// require_once( plugin_dir_path(__FILE__) . 'inc/pro/load-features.php');
+require_once( plugin_dir_path(__FILE__) . 'inc/pro/plugin-settings.php');
+require_once( plugin_dir_path(__FILE__) . 'inc/pro/load-features.php');
 
 
 // FREE
-require_once( plugin_dir_path(__FILE__) . 'inc/free/plugin-settings.php');
-require_once( plugin_dir_path(__FILE__) . 'inc/free/load-features.php');
+//require_once( plugin_dir_path(__FILE__) . 'inc/free/plugin-settings.php');
+//require_once( plugin_dir_path(__FILE__) . 'inc/free/load-features.php');

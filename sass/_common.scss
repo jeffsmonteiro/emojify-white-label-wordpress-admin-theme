@@ -41,13 +41,14 @@ html{
     .wrap{
       min-height: 100vh;
       position: relative;
-      padding: 40px;
+      padding: 10px 40px 40px;
       @include breakpoint(medium){
         padding: 20px 10px;
       }
       @include breakpoint(small){
         padding: 0 10px 10px;
       }
+      
     }
     .woocommerce_options_panel{
       .wrap{
@@ -193,7 +194,7 @@ html{
     }
     ul.subsubsub{
       width: 100%;
-      padding: 0 0 32px 0;
+      padding: 0 0 1em 0;
       margin: 0;
       }
     }
@@ -212,54 +213,60 @@ html{
       padding:  0;
     }
   .search-box{
-    width: calc(100% - 20px);
-    background-color: #fff;
+    width: 100%;
+    background-color: transparent;
     display: flex;
-    float: inherit;
-    border-radius: .5em .5em 0 0;
-    @include box-shadow(0, 6px, 12px, rgba(0,0,0,.1));
-    margin: 32px 0 0;
-    padding: 30px 10px 20px;
+    justify-content: space-between;
+    float: unset;
+    margin: 1em 0 2em;
+    padding: 0;
     position: relative;
-    label.screen-reader-text{
-      border: initial;
-      clip: unset;
-      -webkit-clip-path: unset;
-      clip-path: unset;
-      height: auto;
-      margin: unset;
-      overflow: auto;
-      padding: unset;
-      width: auto;
-      word-wrap: normal;
-      display: unset;
+    @include transition(all .3s ease);
+    &:before{
+      font-family: "dashicons";
+      content: "\f179";
+      color: rgba($gray, .5);
+      display: block;
+      -webkit-font-smoothing: antialiased;
       position: absolute;
-      top: 8px;
-      @include breakpoint( medium ){
-        display: none;
+      font-size: 2.5em;
+      margin-left: .3em;
+      @include transition(all .3s ease);
+    }
+    &:focus, &:hover{
+      &:before{
+        color: rgba($gray, 1);
       }
     }
     input[type='search']{
       width: 100%;
       border: 1px solid rgba($gray, .3);
-      border-radius: .25em;
+      border-radius: 10em;
       margin: 0 24px 0 0;
-      padding: 4px 8px;
+      padding: 4px 8px 4px 46px;
       background-color: #fff;
       color: $gray-dark;
       font-size: 1.5em;
-      &:before{
-        content: 'Search';
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+      outline: none;
+      @include transition(all .3s ease);
+      &:hover, &:focus, &:active{
+        @include box-shadow(0, 3px, 6px, rgba(0,0,0,.05));
+        outline: none;
       }
     }
-    // #post-search-input, 
-    // #plugin-search-input{
-    //   width: 100%;
-    // }
+    #search-submit{
+      background-color: $primary;
+      border-radius: 10em;
+      color: #fff;
+      padding: 0em 3em;
+      &:hover{
+        background-color: $primary-hover;
+      }
+    }
   }
   @include breakpoint(medium){
     .search-box{
+      background: #fff;
       width: calc(100% - 20px);
       margin-bottom: 0;
       padding: 5px 10px;
@@ -278,13 +285,13 @@ html{
         border: 3px solid white;
         border-radius: 20px;
         position: absolute;
-        right: 17px;
+        right: 39px;
         top: 11px;
       }
       &:after{
         content: '';
         position: absolute;
-        right: 13px;
+        right: 39px;
         bottom: 11px;
         width: 5px;
         -webkit-transform: rotate(45deg);

@@ -20,16 +20,11 @@ function catforwp_load_options(){
 
 	$options 			= wp_load_alloptions();
 
-	$emojify 			= isset($options['catforwp_emojify']) ? $options['catforwp_emojify'] : 0 ;
 	$hide_wp 			= isset($options['catforwp_hide_wp_logo']) ? $options['catforwp_hide_wp_logo'] : 0;
 	$clean_dash   = isset($options['catforwp_clean_dashboard']) ? $options['catforwp_clean_dashboard'] : 0;
+	
 
-	// Add emojify class to body
-
-	if ( $emojify ):
-		add_filter( 'admin_body_class', 'catforwp_add_body_class');
-		add_action( 'admin_menu', 'catforwp_emojify_admin_icons', 999 );
-	endif;
+	// Add emojify class to body	
 
 	if ( $hide_wp ):
 		add_action( 'wp_before_admin_bar_render', 'catforwp_remove_wp', 0 );
@@ -50,10 +45,18 @@ add_filter('init', 'catforwp_load_options');
 * Adding catforwp class to body
 */
 
-function catforwp_add_body_class(){
-	return 'catforwp-emojify';
-}
+function catforwp_emojify_menu(){
 
+	$options 			= wp_load_alloptions();
+	$emojify 			= isset($options['catforwp_emojify']) ? $options['catforwp_emojify'] : 0 ;
+	
+	// Add emojify class to body
+
+	if ( $emojify ):
+		return 'catforwp-emojify';
+	endif;
+}
+add_filter( 'admin_body_class', 'catforwp_emojify_menu');
 
 
 
@@ -86,13 +89,14 @@ function catforwp_custom_brand_admin() {
 	$options 			= wp_load_alloptions();
 	
 	$brand_header = isset($options['catforwp_brand_header']) ? $options['catforwp_brand_header'] : 0;
-	$brand_icon 	= isset($options['catforwp_brand_favicon']) ? $options['catforwp_brand_favicon'] : '';
+	$brand_icon 	= isset($options['catforwp_brand_favicon']) ? $options['catforwp_brand_favicon'] : 0;
 	$gutenberg 		= isset($options['catforwp_brand_gutenberg']) ? $options['catforwp_brand_gutenberg'] : 0;
 	$hide_version = isset($options['catforwp_hide_wp_version']) ? $options['catforwp_hide_wp_version'] : 0;
-
+	$custom_css   = isset($options['catforwp_cat_custom_style']) ? $options['catforwp_cat_custom_style'] : 0;
+	
 	$head 				= '';
 	$style 				= '<style type="text/css">';
-
+	
 	if( $brand_header ):
 		$brand_header = wp_get_attachment_url( $brand_header );
 		$style .= '
@@ -121,10 +125,11 @@ function catforwp_custom_brand_admin() {
 				}
 			';
 	endif;
-
+	
 	if( $hide_version ){
-		$style .= '#footer-upgrade{ display: none; }';
+		$style .= "#footer-upgrade{ display: none; }";
 	}
+
 
 	if( $gutenberg ):
 		$gutenberg = wp_get_attachment_url( $gutenberg );
@@ -141,22 +146,26 @@ function catforwp_custom_brand_admin() {
 			}
 			
 		";
-
 	endif;
+	
+	
+	if($custom_css){
+		$style .= $custom_css;
+	}
 
-	$style .= '</style>';
+	$style .= "</style>";
 	
 	if( $brand_icon != '' ):
 		$brand_icon = wp_get_attachment_url( $brand_icon );
 		if( $brand_icon ):
 			$head .= '<link rel="Shortcut Icon" type="image/x-icon" href="'.$brand_icon.'" />';
-			$head .= $style;
 		endif;
 	endif;
 
+	$head .= $style;
 	echo $head;
 }
-add_action( 'admin_head', 'catforwp_custom_brand_admin', 0 );
+add_action( 'admin_head', 'catforwp_custom_brand_admin', 100 );
 
 
 
@@ -292,7 +301,7 @@ function catforwp_emojify_admin_icons() {
 		echo $css;
 	}, 10 );
 }
-
+add_action( 'admin_menu', 'catforwp_emojify_admin_icons', 999 );
 
 
 /**
@@ -301,6 +310,8 @@ function catforwp_emojify_admin_icons() {
 
 function catforwp_content_styles() {
 	
+	wp_enqueue_code_editor( array( 'type' => 'text/html') );
+		
 	wp_enqueue_script(
 		'catforwp-script',
 		plugin_dir_url(__FILE__) . '../../js/catforwp.js',
@@ -329,9 +340,9 @@ function catforwp_content_styles() {
 
 	wp_enqueue_style(
 		'emojionarea-style',
-		plugin_dir_url(__FILE__) . '../../css/vendor/emojionearea.css'
+		plugin_dir_url(__FILE__) . '../../css/vendor/emojionearea.min.css'
 	);
 }
 
-add_action( 'admin_enqueue_scripts', 'catforwp_content_styles' );
+add_action( 'admin_enqueue_scripts', 'catforwp_content_styles',990 );
 add_action( 'login_enqueue_scripts', 'catforwp_content_styles' );

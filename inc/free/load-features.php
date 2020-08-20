@@ -12,23 +12,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+
+
+
 /**
-* Applying options to Admin Theme
+* Adding custom css in admin head
 */
 
-function catforwp_load_options(){
 
-	$options 			= wp_load_alloptions();
-	$emojify 			= isset($options['catforwp_emojify']) ? $options['catforwp_emojify'] : 0 ;
-	
-	// Add emojify class to body
+function catforwp_add_custom_style(){
 
-  if ( $emojify ):
-		add_filter( 'admin_body_class', 'catforwp_add_body_class');
-  endif;
-  
+	$options 		= wp_load_alloptions();
+	$custom_css = isset($options['catforwp_cat_custom_style']) ? $options['catforwp_cat_custom_style'] : 0;
+
+	if($custom_css){
+		$style  = '<style type="text/css">';
+		$style .= $custom_css;
+		$style .= '</style>';
+		echo $style;
+	}
 }
-add_filter('init', 'catforwp_load_options');
+
+add_action( 'admin_head', 'catforwp_add_custom_style', 0 );
+
+
+
 
 
 
@@ -37,9 +45,21 @@ add_filter('init', 'catforwp_load_options');
 * Adding catforwp class to body
 */
 
-function catforwp_add_body_class(){
-	return 'catforwp-emojify';
+function catforwp_emojify_menu(){
+
+	$options 			= wp_load_alloptions();
+	$emojify 			= isset($options['catforwp_emojify']) ? $options['catforwp_emojify'] : 0 ;
+	
+	// Add emojify class to body
+
+	if ( $emojify ):
+		return 'catforwp-emojify';
+	endif;
 }
+add_filter( 'admin_body_class', 'catforwp_emojify_menu');
+
+
+
 
 
 /**
@@ -49,8 +69,17 @@ function catforwp_add_body_class(){
 
 function catforwp_content_styles() {
 
-	wp_enqueue_code_editor( array( 'type' => 'text/html') );
-  wp_enqueue_script( 'js-code-editor', plugin_dir_url( __FILE__ ) . '../../js/catforwp-lite.js', array( 'jquery' ), '', true );
+	wp_enqueue_code_editor( 
+		array( 'type' => 'text/html') 
+	);
+
+  wp_enqueue_script( 
+		'catforwp-script', 
+		plugin_dir_url( __FILE__ ) . '../../js/catforwp-lite.js', 
+		array( 'jquery' ), 
+		'1.0', 
+		true 
+	);
 
 	wp_enqueue_style(
 		'catforwp-style',

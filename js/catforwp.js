@@ -1,6 +1,25 @@
+'use strict';
 (function($){
 
   $(document).ready(function() {
+
+    /* CSS Custom Code Mirror */
+
+    if( $('#cat_custom_style').length ) {
+      var editorSettings = wp.codeEditor.defaultSettings ? _.clone( wp.codeEditor.defaultSettings ) : {};
+      editorSettings.codemirror = _.extend(
+          {},
+          editorSettings.codemirror,
+          {
+              indentUnit: 2,
+              tabSize: 2,
+              mode: 'css',
+          }
+      );
+      var editor = wp.codeEditor.initialize( $('#cat_custom_style'), editorSettings );
+    }
+
+    /* Emojify Picker */
 
     var entityMap = {
       '&': '&amp;',
@@ -45,28 +64,9 @@
                 input   = editor.parent().parent().find('.is-emoji-picker').data('menu');
             
                 $("#emojify_section\\["+input+"\\]").val(match[1]).attr('value', match[1]);
-            
-            //editor.parent().parent().find('input.is-emoji-picker').attr('value',match[1]);
-            //console.log(editor.parent().parent().find('.is-emoji-picker').data('menu'));
           },
         }
       });
     })
-      
-    // var catforwpItem = $(".is-emoji-picker").emojioneArea({
-    //     standalone: true,
-    //     autocomplete: false,
-    //     useSprite: true,
-    //     search: false,
-    //     recentEmojis: false,
-    //     useInternalCDN: false
-    // });
-    
-    $(document).on("load", ".emojionearea-editor>img", function(e) {
-
-      console.log($(this).attr('src'));
-      
-    });
-    
   });
 })(jQuery);

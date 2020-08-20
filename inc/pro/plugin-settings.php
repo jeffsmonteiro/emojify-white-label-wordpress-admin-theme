@@ -13,8 +13,8 @@ function catforwp_settings_page() {
     $config_array['prefix']   = 'catforwp_';
     $config_array['tabs']     = true;
     $config_array['menu']     = array(
-      'page_title'            => esc_html__( 'Emojify WLAT', 'catforwp' ),
-      'menu_title'            => esc_html__( 'Emojify Admin Theme', 'catforwp' ),
+      'page_title'            => esc_html__( 'Cool Admin Theme Pro', 'catforwp' ),
+      'menu_title'            => esc_html__( 'Cool Admin Theme', 'catforwp' ),
       'capability'            => 'manage_options',
       'slug'                  => 'catforwp',
       'icon'                  => 'dashicons-performance',
@@ -34,6 +34,11 @@ function catforwp_settings_page() {
         'id'    => 'emojify_section',
         'title' => esc_html__( 'Emojify Settings', 'catforwp' ),
         'desc'  => '',
+      ),
+      array(
+        'id'    => 'css_section',
+        'title' => esc_html__( 'Custom CSS', 'catforwp' ),
+        'desc'  => esc_html__( '', 'catforwp' )
       ),
       array(
         'id'    => 'help_section',
@@ -154,6 +159,20 @@ function catforwp_settings_page() {
         // this section is generated dinamically
         // if necessary, you can add some fields here
         // they will displayed before the emoji selectors
+      ),
+
+      'css_section' => array(
+        
+        array(
+          'id'          => 'cat_custom_style',
+          'label'       => esc_html__( 'Add your CSS', 'catforwp' ),
+          'desc'        => esc_html__( 'You can add new emojis or whatever for Admin Area using custom CSS code.', 'catforwp' ),
+          'type'        => 'textarea',
+          'default'     => 
+".catforwp-emojify #menu-dashboard > a::before{
+  content: '📺';
+}"
+        ),
       ),
 
       'help_section' => array(

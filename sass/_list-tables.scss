@@ -12,9 +12,18 @@
   }
   &.top{
     background-color: #fff;
-    border-radius: 0 0 .5em .5em;
+    border-radius: .5em .5em 0 0;
     padding: 0px;
-    margin-bottom: 32px;
+    margin-bottom: 0px;
+    z-index: 0;
+    box-shadow: none;
+    @include breakpoint(medium){
+      .tablenav-pages{
+        margin: 1em auto;
+        display: flex;
+        border-radius: .5em .5em 0 0;
+      }
+    }
     @include breakpoint(small){
       border-radius: .5em;
     }
@@ -27,7 +36,7 @@
     }
     .tablenav-pages{
       @include breakpoint(medium){
-        margin-top: 0;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -52,14 +61,14 @@
 }
 table{
   &.widefat{
-    border-radius: .5em;
+    border-radius: 0 0 .5em .5em;
     border-color: transparent;
     @include box-shadow(0, 6px, 12px, rgba(0,0,0,.1));
     thead{
-      border-radius: .5em .5em 0 0;
+      border-radius: 0;
       tr{
         td.check-column{
-          border-radius: .5em 0 0 0;
+          border-radius: 0;
           border-bottom: $border;
         }
         td{

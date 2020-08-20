@@ -1,43 +1,60 @@
-.woocommerce-page{
+.woocommerce-embed-page .woocommerce-layout__header,
+.woocommerce-layout__header{
+  top: 60px;
+  left: 201px;
+  @include breakpoint(large){
+    left: 61px;
+  }
+  @include breakpoint(medium){
+    left: 0;
+    .woocommerce-layout__activity-panel-mobile-toggle{
+      top: 60px;
+    }
+  }
+  .woocommerce-layout__header-breadcrumbs{
+    font-size: 1em !important;
+    margin: 0;
+    a{
+      text-decoration: none;
+    }
+  }
+}
+.folded{
+  .woocommerce-embed-page .woocommerce-layout__header,
   .woocommerce-layout__header{
+    left: 61px;
     top: 60px;
-    left: 201px;
-    .woocommerce-layout__header-breadcrumbs{
-      font-size: 1.2em !important;
-    }
-  }
-  &.folded{
-    .woocommerce-layout__header{
-      left: 61px;
-      @include breakpoint (medium){
-        left: 0;
-      }
-      .woocommerce-layout__activity-panel-mobile-toggle{
-        top: 60px;
-      }
-    }
-  }
-  .woocommerce-layout__activity-panel-tabs{
-
     @include breakpoint (medium){
-      justify-content: center;
+      left: 0;
     }
-    .woocommerce-layout__activity-panel-tab{
-      color: $gray;
-    }
-  }
-  .woocommerce-layout__activity-panel-wrapper{
-    top: 116px;
-    @include breakpoint (medium){
-      top: 172px;
+    .woocommerce-layout__activity-panel-mobile-toggle{
+      top: 60px;
     }
   }
-  .woocommerce-card{
-    border-radius: .5em;
-    border: none;
-    @include box-shadow(0, 6px, 12px, rgba(0,0,0,.1));
-  }
-  .woocommerce-dashboard__chart-block-wrapper{
+}
+.woocommerce-layout__activity-panel-tabs{
 
+  @include breakpoint (medium){
+    justify-content: center;
   }
+  .woocommerce-layout__activity-panel-tab{
+    color: $gray;
+  }
+}
+.woocommerce-layout__activity-panel-wrapper{
+  top: 116px;
+  @include breakpoint (medium){
+    top: 172px;
+  }
+}
+.woocommerce-card{
+  border-radius: .5em;
+  border: none;
+  @include box-shadow(0, 6px, 12px, rgba(0,0,0,.1));
+}
+
+.woocommerce-BlankState{
+  width: 100%;
+  text-align: center;
+  padding: 5em 0;
 }
