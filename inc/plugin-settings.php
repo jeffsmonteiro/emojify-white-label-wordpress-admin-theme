@@ -1,4 +1,13 @@
 <?php
+/**
+* Cool Admin Theme Pro for WordPress
+* Version: 1.0.0
+* License: GPL-3.0-or-later
+*
+* @package catforwp
+* @version 1.0.0
+*/
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

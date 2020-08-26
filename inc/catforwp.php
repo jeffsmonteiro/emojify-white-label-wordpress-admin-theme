@@ -1,7 +1,16 @@
 <?php
-// if ( ! defined( 'ABSPATH' ) ) {
-// 	exit;
-// }
+/**
+* Cool Admin Theme Pro for WordPress
+* Version: 1.0.0
+* License: GPL-3.0-or-later
+*
+* @package catforwp
+* @version 1.0.0
+*/
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 $code = "dddaace7-2ed6-41d8-ba18-1796cf90cb56";
 $personalToken = "7WkH2E4kQe6rlHebFeM1wdF3xWKCuzgw";

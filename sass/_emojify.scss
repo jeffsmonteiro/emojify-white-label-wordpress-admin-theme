@@ -14,14 +14,26 @@ body.settings_page_catforwp{
           border-bottom: none;
         }
       }
+      td{
+        padding: 30px 10px;
+      }
       tr[class^="question"]{
         p.description{
           font-size: 1em;
         }
       }
     }
+    .upload{
+      display: flex;
+      img{
+        border: 2px dashed $gray-light !important;
+        background-color: $gray-light;
+        border-radius: 4px !important;
+        margin-right: 8px;
+      }
+    }
   }
-
+  
 }
 
 

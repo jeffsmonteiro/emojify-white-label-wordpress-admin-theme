@@ -53,6 +53,8 @@
         search: false,
         recentEmojis: false,
         useInternalCDN: true,
+        pickerPosition: "right",
+        hidePickerOnBlur: false,
         events: {
           load: function (editor, event) {
             console.log(editor);

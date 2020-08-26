@@ -1048,7 +1048,7 @@ if ( ! class_exists( 'Boo_Settings_Helper' ) ):
 			$height       		 	= isset( $args['options']['height'] ) ? absint( $args['options']['height'] ) : '';
 			$text          			= isset( $args['options']['btn'] ) ? sanitize_text_field( $args['options']['btn'] ) : __( 'Upload' );
 
-			$image_placeholder  = is_numeric($width) && is_numeric($height) ? 'https://www.placehold.it/'.$width.'x'.$height : 'https://www.placehold.it/120x120';
+			$image_placeholder  = is_numeric($width) && is_numeric($height) ? 'https://via.placeholder.com/'.$width.'x'.$height.'/FFFFFF/8b9ab7' : 'https://via.placeholder.com/120x120/FFFFFF/8b9ab7';
 			$default_image 			= isset( $args['default'] ) && $args['default'] !== '' ? esc_url_raw( $args['default'] ) : $image_placeholder;
 
 			$image_size 				= ( ! empty( $width ) && ! empty( $height ) ) ? array( $width, $height ) : 'thumbnail';

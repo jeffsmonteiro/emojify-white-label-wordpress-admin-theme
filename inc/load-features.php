@@ -1,6 +1,6 @@
 <?php
 /**
-* Cool Admin Theme Lite for WordPress
+* Cool Admin Theme Pro for WordPress
 * Version: 1.0.0
 * License: GPL-3.0-or-later
 *
@@ -94,6 +94,7 @@ function catforwp_custom_brand_admin() {
 	$hide_version = isset($options['catforwp_hide_wp_version']) ? $options['catforwp_hide_wp_version'] : 0;
 	$custom_css   = isset($options['catforwp_cat_custom_style']) ? $options['catforwp_cat_custom_style'] : 0;
 	
+
 	$head 				= '';
 	$style 				= '<style type="text/css">';
 	
@@ -147,8 +148,7 @@ function catforwp_custom_brand_admin() {
 			
 		";
 	endif;
-	
-	
+
 	if($custom_css){
 		$style .= $custom_css;
 	}
@@ -201,7 +201,7 @@ function catforwp_login_brand() {
 	if( $color && $color != ''):
 		$style .= '
 			body{
-				background: '.$color.';
+				background: '.$color.' !important;
 			}
 		';
 	endif;
@@ -314,33 +314,33 @@ function catforwp_content_styles() {
 		
 	wp_enqueue_script(
 		'catforwp-script',
-		plugin_dir_url(__FILE__) . '../../js/catforwp.js',
+		plugin_dir_url(__FILE__) . '../js/catforwp.js',
 		array('emojionearea-script'),
 		'1.1'
 	);
 
 	wp_enqueue_style(
 		'catforwp-style',
-		plugin_dir_url(__FILE__) . '../../css/catforwp.min.css'
+		plugin_dir_url(__FILE__) . '../css/catforwp.min.css'
 	);
 
 	wp_enqueue_script(
 		'emojione-script',
-		plugin_dir_url(__FILE__) . '../../js/vendor/emojione.min.js',
+		plugin_dir_url(__FILE__) . '../js/vendor/emojione.min.js',
 		array('jquery'),
 		'4.5'
 	);
 
 	wp_enqueue_script(
 		'emojionearea-script',
-		plugin_dir_url(__FILE__) . '../../js/vendor/emojionearea.min.js',
+		plugin_dir_url(__FILE__) . '../js/vendor/emojionearea.min.js',
 		array('emojione-script'),
 		'3.4.1'
 	);
 
 	wp_enqueue_style(
 		'emojionarea-style',
-		plugin_dir_url(__FILE__) . '../../css/vendor/emojionearea.min.css'
+		plugin_dir_url(__FILE__) . '../css/vendor/emojionearea.min.css'
 	);
 }
 
