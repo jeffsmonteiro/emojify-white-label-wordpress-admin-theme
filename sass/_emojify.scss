@@ -397,7 +397,8 @@ body.settings_page_catforwp{
     content: '⛱';
   }
 
-  #toplevel_page_wc-admin-path--analytics-overview > a::before{
+  #toplevel_page_wc-admin-path--analytics-overview > a::before,
+  #toplevel_page_wc-admin-path--analytics-revenue > a::before{
     content: '🤓';
   }
 
@@ -427,5 +428,23 @@ body.settings_page_catforwp{
 
   #toplevel_page_jetpack > a::before{
     content: '🎒';
+  }
+  #toplevel_page_meta-box > a::before{
+    content: '🍱';
+  }
+  #toplevel_page_mt-setup > a::before{
+    content: '🌱';
+  }
+  #toplevel_page_algolia > a::before{
+    content: '🔍';
+  }
+  #toplevel_page_nutri-menu > a::before{
+    content: '🍏';
+  }
+  #toplevel_page_personal-trainer-menu > a::before{
+    content: '💪';
+  }
+  #menu-posts-recipe > a::before{
+    content: '📔';
   }
 }
