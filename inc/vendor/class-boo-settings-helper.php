@@ -475,6 +475,7 @@ if ( ! class_exists( 'Boo_Settings_Helper' ) ):
 				'callback'          => '',
 				'sanitize_callback' => '',
 				'value'             => '',
+				'input_class'				=> '',
 				'show_in_rest'      => true,
 				'class'             => $field['id'],
 				'std'               => '',
