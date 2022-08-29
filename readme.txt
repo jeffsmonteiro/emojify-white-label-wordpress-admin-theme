@@ -1,4 +1,4 @@
-=== Cool Admin Theme Lite for WordPress ===
+=== Emojify White Label Wordpress Admin Theme ===
 Contributors: Jeff Monteiro
 Tags: white label wordpress admin theme, admin theme, emoji wordpress admin theme
 Requires at least: 4.6
@@ -7,12 +7,12 @@ Stable tag: 1.0.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Cool Admin Theme Lite for WordPress is free software: you can redistribute 
+Emojify White Label Wordpress Admin Theme is a free software: you can redistribute 
 it and/or modify it under the terms of the GNU General Public License 
 as published by the Free Software Foundation, either version 3 of the 
 License, or any later version.
 
-Cool Admin Theme Lite for WordPress is distributed in the hope that it will 
+Emojify White Label Wordpress Admin Theme is distributed in the hope that it will 
 be useful,but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
@@ -24,20 +24,16 @@ https://www.gnu.org/licenses/gpl-3.0.html.
 
 == Description ==
 
-Cool Admin Theme Lite for WordPress is a super lightweight and clean interface for your WordPress Admin Pages. With a clean design proposal, this plugin tries to modernize the wordpress admin interface in addition to allowing you to use your own brand, both within admin and login pages.
+Emojify White Label Wordpress Admin Theme is a super lightweight and clean interface for your WordPress Admin Pages. With a clean design proposal, this plugin tries to modernize the wordpress admin interface in addition to allowing you to use your own brand, both within admin and login pages.
 
 Finally, it is also possible to make the admin interface a little more fun by activating the emojify function, which replaces the icons in the side menu with emojis.
 
-FEATURES FREE VERSION
+FEATURES
 
 - New cool style for Admin Pages
 - Emojify Admin Menu with predefined emojis
 - Enqueue your custom CSS to add more emojis or whatever
 - Translation Ready
-
-FEATURES PRO VERSION
-
-- All features of the free version more:
 - Hide WordPress logo from admin navigation bar
 - Use your own logo in admin top navigation bar 
 - Replace WordPress logo by yours in login page
